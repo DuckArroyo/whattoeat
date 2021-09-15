@@ -1,8 +1,18 @@
 /*!Global styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  background-color: black;
+  color: red;
+  text-align: center;
+  padding: 20px;
+  margin: 0px;
+}
 
-.h1 {
-  align-items: center;
-  align-content: center;
+.inner-box {
+  padding: 20px;
 }
 
 /*! Buttons styles */

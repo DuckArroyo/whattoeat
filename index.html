@@ -4,40 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Form style -->
     <link rel="stylesheet" 
     href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" 
     integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" 
     crossorigin="anonymous">
+    <!-- Grid style -->
     <link rel="stylesheet" 
-    href="style.css">
+    href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="./css/style.css">
     
     <title>Find dinner</title>
 </head>
 <body>
-    <h1>What do you want to eat?</h1>
-    <div>
-        <form class="pure-form pure-form-stacked">
-            <fieldset>
-                <legend>Finding dinner with a partner can be a challenge, we are here to help out. <br>
-                    Lets get dinner figured out</legend>
-                <label for="stacked-email">Some info</label>
-                <input type="input" id="stacked-email" placeholder="user input" />
-                <span class="pure-form-message">This is a required field.</span>
-                <label for="stacked-category">Category</label>
-                <select id="stacked-category">
-                    <option>Mexican</option>
-                    <option>Asian</option>
-                    <option>Italian</option>
-                </select>
-                <button type="submit" class="pure-button pure-button-primary">Search</button>
-            </fieldset>
-        </form>
-    </div>
-    <div>
-        
-    </div>
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <h1>What do you want to eat?</h1>
+        <!--! Form 
+            please change IDs as you best see fit. for the fetch queries.
+         -->
+        <div id="criteria"  class="pure-u-1">
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
+                    <legend>Finding dinner with a partner can be a challenge, we are here to help out. <br>
+                        Lets get dinner figured out</legend>
+                    <label for="stacked-email">Some info</label>
+                    <input type="input" id="stacked-userentry" placeholder="user input" />
+                    <span class="pure-form-message">This is a required field.</span>
+                    <label for="stacked-category">Category</label>
+                    <select id="stacked-category">
+                        <option>Mexican</option>
+                        <option>Asian</option>
+                        <option>Italian</option>
+                    </select>
+                    <button id=""  type="submit" class="pure-button pure-button-primary">Search</button>
+                </fieldset>
+            </form>
+        </div>
+        <!--------------------------------------------------------- -->
+        <div id=""  class="pure-u-1
+        pure-u-md-1-2
+        pure-u-lg-1-4">
+           <p>box with style</p>
+        </div>
+        <!--------------------------------------------------------- -->
 
-
+        <div id=""  class="pure-u-1
+        pure-u-md-1-2
+        pure-u-lg-1-4">
+            <p>box with style</p>
+        </div>
+        <!--------------------------------------------------------- -->
+        <div id=""  class="pure-u-1
+        pure-u-md-1-2
+        pure-u-lg-1-4">
+            <p>box with style</p>
+        </div>
+</div>
     <script src="./js/javascript.js"></script>
 </body>
 </html>

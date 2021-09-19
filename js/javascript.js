@@ -1,9 +1,14 @@
+var btn = document.getElementById("locate");
 
+//var el = document.getElementById("pure-button pure-button-primary");
 
-var el = document.getElementById("pure-button pure-button-primary");
-console.log(el)
+function firstfunction() {
+    alert("Search for meals");
+}
+btn.addEventListener("click", firstfunction );
 
-document.getElementById("pure-button pure-button-primary");
-el.addEventListener("click", function() {
-   myFunction();
-})
+//document.getElementById("locate");
+//el.addEventListener("click", function() {
+   //myFunction();
+//})
+

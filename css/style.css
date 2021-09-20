@@ -1,15 +1,24 @@
+:root {
+  --blue: #50A8BF;
+  --sand: #E9C267;
+
+
+}
 /*!Global styles */
 * {
   margin: 0;
   padding: 0;
 }
 h1 {
-  background-color: black;
-  color: red;
-  text-align: center;
-  padding: 20px;
+  background-color: var(--blue);
+  color: var(--sand);
+  text-align: left;
+  padding: 40px;
   margin: 0px;
+  
 }
+
+
 
 .inner-box {
   margin: 50px auto;
@@ -47,7 +56,17 @@ h1 {
   /* this is a light blue */
 }
 
-.firstchoice {
+#option1 { 
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 700px;
+}
+
+
+head nav ul li a {
+  margin: 0 30px;
+  font-weight: lighter;
+  font-size: 22px;
 }
 
 

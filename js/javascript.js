@@ -7,6 +7,6 @@ scoreButtonEl.addEventListener("click", function () {
   event.preventDefault();
   if (score > 0) {
     score--;
-    scoreEl.textContent = score;
+    scoreEl.textContent = "Score: " + score;
   }
 });

@@ -1,6 +1,6 @@
 :root {
-  --blue: #50A8BF;
-  --sand: #E9C267;
+  --green:#69896F;
+  --white:#FFFFFF;
 
 
 }
@@ -9,12 +9,14 @@
   margin: 0;
   padding: 0;
 }
-h1 {
-  background-color: var(--blue);
-  color: var(--sand);
+
+h2 {
+  background-color: var(--green);
+  color:var(--white);
   text-align: left;
-  padding: 40px;
+  padding: 40px 60px;
   margin: 0px;
+font-size: 40px;
   
 }
 
@@ -69,6 +71,11 @@ head nav ul li a {
   font-size: 22px;
 }
 
-
-
+.hero {
+  background-image: url("https://t4.ftcdn.net/jpg/02/09/64/33/360_F_209643310_7tdlZx6oMF9iPqnt2PzbXdfYTNKGohdm.webp");
+  background-repeat: no-repeat;
+  position: bottom;
+  background-size: cover;
+  height: 400px;
+}
 

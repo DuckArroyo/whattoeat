@@ -17,6 +17,10 @@ h1 {
   max-width: 700px;
 }
 
+legend {
+  padding: 20px auto;
+}
+
 /*! Buttons styles */
 .button-success,
 .button-error,

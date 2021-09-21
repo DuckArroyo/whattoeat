@@ -1,8 +1,6 @@
 :root {
-  --green:#69896F;
-  --white:#FFFFFF;
-
-
+  --green: #69896f;
+  --white: #ffffff;
 }
 /*!Global styles */
 * {
@@ -10,22 +8,21 @@
   padding: 0;
 }
 
-
 h1 {
   background-color: black;
   color: red;
   text-align: center;
   padding: 20px;
+}
 
 h2 {
   background-color: var(--green);
-  color:var(--white);
+  color: var(--white);
   text-align: left;
   padding: 40px 60px;
 
   margin: 0px;
-font-size: 40px;
-  
+  font-size: 40px;
 }
 
 .inner-box {
@@ -68,12 +65,11 @@ legend {
   /* this is a light blue */
 }
 
-#option1 { 
+#option1 {
   margin: 50px auto;
   padding: 20px;
   max-width: 700px;
 }
-
 
 head nav ul li a {
   margin: 0 30px;
@@ -99,9 +95,7 @@ head nav ul li a {
   border: solid;
   border-color: blue;
   text-align: center;
-
 }
 
-@media screen and (min-width: 600px)  {
-  
+@media screen and (min-width: 600px) {
 }

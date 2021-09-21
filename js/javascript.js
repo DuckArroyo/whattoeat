@@ -1,4 +1,15 @@
-// score code needs to be pulled
+var score = 10;
+
+var scoreButtonEl = document.querySelector("#submiter"); //!Need submit button id.
+var scoreEl = document.querySelector("#score");
+
+scoreButtonEl.addEventListener("click", function () {
+  event.preventDefault();
+  if (score > 0) {
+    score--;
+    scoreEl.textContent = "Score: " + score;
+  }
+});
 
 var apiKey = "359d18be100f928817fd7d3a21693376";
 

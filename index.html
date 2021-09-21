@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+√<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,16 +23,12 @@
         <div class="pure-u-1">
             <h1>What do you want to eat?</h1>
         </div>
-        <div id="gif" class="pure-u-1" style="display: flex;" >
-                <iframe src="https://giphy.com/embed/GDqDZOPSZJC00" 
-                width="480" 
-                height="204" 
-                frameBorder="0" 
-                style=" justify-content: center;  align-items: center; border-radius: 10px; padding: 20px; "
-                <!-- class="giphy-embed"  -->
-                allowFullScreen>
-            <!-- </iframe><p><a href="https://giphy.com/gifs/girlfriend-eat-GDqDZOPSZJC00">via GIPHY</a></p> -->
-        </div>
+        <div id="gif" class="pure-u-1 inner-box">
+            <img 
+                src="./images/WhatDoYouWantant.gif" 
+                alt="WHAT DO YOU WANT TO EAT?"
+                style="border-radius: 30px; justify-content: center; ">
+            </div>
         <!--! Form please change IDs as you best see fit. for the fetch queries.-->
         <div id="criteria"  class="pure-u-1 inner-box">
             <form class="pure-form pure-form-stacked">
@@ -43,10 +39,25 @@
                     <input type="input" id="stacked-userentry" placeholder="user input" />
                     <span class="pure-form-message">This is a required field.</span>
                     <label for="stacked-category">Category</label>
-                    <select id="stacked-category">
-                        <option>Mexican</option>
+                    <select id="stacked-category" class="cuisineType">
+                        <option>American</option>
                         <option>Asian</option>
+                        <option>British</option>
+                        <option>Caribbean</option>
+                        <option>Central Europe</option>
+                        <option>French</option>
+                        <option>Indian</option>
                         <option>Italian</option>
+                        <option>Japanese</option>
+                        <option>Kosher</option>
+                        <option>Mediterranean</option>
+                        <option>Mexican</option>
+                        <option>Middle Eastern</option>
+                        <option>Nordic</option>
+                        <option>South American</option>
+                        <option>South East Asian</option>
+                        
+                        Italian</option>
                     </select>
                     <button id=""  type="submit" class="pure-button pure-button-primary">Search</button>
                 </fieldset>

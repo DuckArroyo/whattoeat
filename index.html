@@ -16,7 +16,7 @@
     <!-- Local stylesheet -->
     <link rel="stylesheet" href="./css/style.css">
     
-    <title> Find dinner</title>
+    <title>Find dinner</title>
 </head>
 <body>
    
@@ -40,12 +40,12 @@
         <div id="criteria"  class="hero-form">
             <form class="pure-form pure-form-stacked">
                 <fieldset>
-                    <legend>
+                    <p>
                         Finding dinner with a partner can be a challenge, we are here to help out. <br>
                         Lets get dinner figured out.<br>
                         But there is a catch, to avoid that never ending cycle of pain... <br>
                         You only have 10 tries!
-                    </legend>
+                    </p>
                     <label for="stacked-email">Some info</label>
                     <input type="input" id="stacked-userentry" placeholder="user input" />
                     <span class="pure-form-message">This is a required field.</span>
@@ -81,7 +81,7 @@
             Empty boxes (3) to populate with results. They are mobile responsive
          -->
 
-        <div id="box"  class="pure-u-1">
+        <div id="box"  class="pure-u-1" style="display: flex; flex-direction: column;">
             <div id="option1"  class="pure-u-1
             pure-u-md-1-2
             pure-u-lg-1-4
@@ -90,7 +90,7 @@
             </div>
             <!--------------------------------------------------------- -->
 
-            <div id="option"  class="pure-u-1
+            <div id="option2"  class="pure-u-1
             pure-u-md-1-2
             pure-u-lg-1-4
             inner-box">
@@ -98,12 +98,8 @@
             </div>
             <!--------------------------------------------------------- -->
 
-            <div id="score"  class="pure-u-1">
-                <div id="option3"  class="pure-u-1
-                pure-u-md-1-2
-                pure-u-lg-1-4">
-                    <h2>Score: <span id="score">10</span></h2>
-                </div>
+            <div id="score"  class="pure-u-1" style="justify-content: center;">
+                <h2>Score: <span id="score">10</span></h2>
             </div>
         </div>
     </div>

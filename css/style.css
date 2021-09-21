@@ -87,11 +87,11 @@ head nav ul li a {
 }
 
 .hero-form {
-  display: inline;
   background-color: var(--white);
   color: black;
-  /* width: 300px; */
-  /* height: 100px; */
+  width: 600px;
+  height: 100px;
+  margin: 0 auto;
   padding-top: 30px;
   border: solid;
   border-color: blue;

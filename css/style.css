@@ -74,24 +74,44 @@ head nav ul li a {
 }
 
 .hero {
-  background-image: url("https://t4.ftcdn.net/jpg/02/09/64/33/360_F_209643310_7tdlZx6oMF9iPqnt2PzbXdfYTNKGohdm.webp");
+  background-image: url("https://as2.ftcdn.net/v2/jpg/01/32/61/13/1000_F_132611338_8QF2IbLH0La8zcfbFYz3qg9HHNdX8Ze7.jpg");
   background-repeat: no-repeat;
   position: bottom;
   background-size: cover;
-  height: 400px;
+  height: 500px;
   max-width: 100%;
 }
 
 .hero-form  {
-  background-color: var(--rust);
+  background-color: var(--white);
  padding: 30px;
  width: 400px;
- float: right;
- border-color: violet;
+ float: center;
  border-width: 3px;
-
+ position: absolute;
+ bottom: 485px;
+ right: 140px;
 }
 
+.hero-form h3{
+  font-size: 16px;
+  margin:0;
+  
+}
+
+.hero-form p {
+  margin: 5px 0 15px 0;
+}
+
+.form-input {
+  border: 1px solid #024e76;
+  display: block;
+  padding: ;
+  font-size: 16px;
+  color: #024e76;
+  width: 100%;
+  margin-bottom: 15px;
+}
 
 
 footer {
@@ -105,5 +125,8 @@ footer h3 {
   font-size: 30px;
   color:var(--white);
 }
+
+
+
 @media screen and (min-width: 600px) {
 }

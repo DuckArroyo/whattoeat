@@ -15,13 +15,26 @@ function myFunction() {
       "&api_key" +
       "d5705ed4f7msh48cd378e1f7bdcfp184776jsnd69703bb9e74"
   )
+  .then(
+   function(response){
+     return respomse.json()
+   }
+  ).then(
+    function(data){
+      console.log(data)
+    }
+  )
     // .then(response => {
     // 	return response.json();
     // 	console.log(response.data[0]);
     // })
 
-    .then(function (response) {
-      console.log(response.data[0]);
+
+
+
+}
+    //.then(function (response) {
+      //console.log(response.data[0]);
 
       // .catch(err => {
       // 	console.error(err);

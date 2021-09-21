@@ -16,21 +16,24 @@
     <!-- Local stylesheet -->
     <link rel="stylesheet" href="./css/style.css">
     
-    <title>Find dinner</title>
+    <title> Find dinner</title>
 </head>
 <body>
+    <section class="hero">
     <div class="pure-g">
         <div class="pure-u-1">
-            <h1>What do you want to eat?</h1>
+            <h2>What do you want to eat?</h2>
+        </section>
         </div>
-        <div id="gif" class="pure-u-1 inner-box">
+        <div id="gif" class="">
             <img 
                 src="./images/WhatDoYouWantant.gif" 
                 alt="WHAT DO YOU WANT TO EAT?"
                 style="border-radius: 30px; justify-content: center; ">
             </div>
         <!--! Form please change IDs as you best see fit. for the fetch queries.-->
-        <div id="criteria"  class="pure-u-1 inner-box">
+        <section>
+        <div id="criteria"  class="hero-form">
             <form class="pure-form pure-form-stacked">
                 <fieldset>
                     <legend>
@@ -61,14 +64,21 @@
                         <option>South American</option>
                         <option>South East Asian</option>
                     </select>
+
                     <button id="submiter"  type="submit" class="pure-button pure-button-primary">Search</button>
-                </fieldset>
+
+                    <button id="locate"  type="submit" class="pure-button pure-button-primary">Search</button>
+
+              </fieldset>
             </form>
         </div>
+        </section>
         <!---------------------------------------------------------
             Empty boxes (3) to populate with results. They are mobile responsive
          -->
+
         <div id="box1"  class="pure-u-1
+        <div id="option1"  class="pure-u-1
         pure-u-md-1-2
         pure-u-lg-1-4
         inner-box">
@@ -76,14 +86,16 @@
         </div>
         <!--------------------------------------------------------- -->
 
-        <div id=""  class="pure-u-1
+        <div id="option2"  class="pure-u-1
         pure-u-md-1-2
         pure-u-lg-1-4
         inner-box">
             <p>box with style</p>
         </div>
         <!--------------------------------------------------------- -->
+
         <div id="score"  class="pure-u-1
+        <div id="option3"  class="pure-u-1
         pure-u-md-1-2
         pure-u-lg-1-4
         inner-box">

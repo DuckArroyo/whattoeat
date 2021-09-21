@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 h1 {
   background-color: black;
   color: red;
@@ -12,7 +13,13 @@ h1 {
 }
 
 .inner-box {
+  margin: 50px auto;
   padding: 20px;
+  max-width: 700px;
+}
+
+legend {
+  padding: 20px auto;
 }
 
 /*! Buttons styles */

@@ -46,15 +46,17 @@ function myFunction() {
       var imgEl = document.createElement("img");
       imgEl.setAttribute("src");
       containerEl.appendChild(imgEl);
-    });
-}
+    ;
+
 
 var btn = document.getElementById("locate");
 
 //var el = document.getElementById("pure-button pure-button-primary");
 
-function firstfunction() {
-  confirm("Search for meals");
+function firstfunction( ) {
+  return fetch("https://edamam-food-and-grocery-database.p.rapidapi.com/parser?q=")
+.then(response => response.json())
+.then(json => (json.results))
 }
 btn.addEventListener("click", firstfunction);
 

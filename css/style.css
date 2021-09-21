@@ -126,6 +126,16 @@ footer h3 {
   color:var(--white);
 }
 
+.locate {
+  background-color: var(--green);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.locate:hover {
+  background-color: var(--rust);
+  color: black;
+}
 
 
 @media screen and (min-width: 600px) {

@@ -48,18 +48,17 @@ var btn = document.getElementById("#locate"); //! Add the # for id.
 //myFunction();
 //})
 
-// var score = 10;
+var score = 10;
+var scoreButtonEl = document.querySelector("#locate"); //!Check in on submit button id.
+var scoreEl = document.querySelector("#scoreSpan");
 
-// var scoreButtonEl = document.querySelector("#locate"); //!Check in on submit button id.
-// var scoreEl = document.querySelector("#score");
-
-// scoreButtonEl.addEventListener("click", function () {
-//   event.preventDefault();
-//   if (score > 0) {
-//     score--;
-//     scoreEl.textContent = "Score: " + score;
-//   }
-// });
+scoreButtonEl.addEventListener("click", function () {
+  event.preventDefault();
+  if (score > 0) {
+    score--;
+    scoreEl.textContent = score;
+  }
+});
 
 // var apiKey = "359d18be100f928817fd7d3a21693376";
 

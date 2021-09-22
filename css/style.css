@@ -9,6 +9,10 @@
   /* width: 1200px; */
 }
 
+body {
+  background-color: tomato;
+}
+
 /*! Buttons styles */
 .button-success,
 .button-error,
@@ -58,9 +62,9 @@ h2 {
 
 #gif {
   display: flex;
-  background-color: tomato;
+  justify-content: center;
   margin: 0px auto;
-  padding: 20px;
+  padding: 30px;
 }
 
 #option1 {
@@ -84,7 +88,7 @@ head nav ul li a {
   width: 100%;
 }
 
-.hero-form {
+/* .hero-form {
   background-color: var(--white);
   color: black;
   width: 600px;
@@ -94,7 +98,7 @@ head nav ul li a {
   border: solid;
   border-color: blue;
   text-align: center;
-}
+} */
 
 #response-container {
   border: solid 2px black;

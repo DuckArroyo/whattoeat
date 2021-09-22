@@ -6,7 +6,7 @@
 * {
   margin: 0;
   padding: 0;
-  max-width: 1000px;
+  /* width: 1200px; */
 }
 
 /*! Buttons styles */
@@ -40,8 +40,8 @@
 }
 
 h1 {
-  background-color: transparent;
-  color: red;
+  background-color: var(--green);
+  color: white;
   text-align: center;
   padding: 20px;
 }
@@ -50,9 +50,10 @@ h2 {
   background-color: transparent;
   color: var(--white);
   text-align: left;
-  padding: 40px 60px;
+  padding: 15px 60px;
   margin: 0px;
   font-size: 40px;
+  text-shadow: 4px 4px 8px #000000;
 }
 
 #gif {
@@ -75,25 +76,44 @@ head nav ul li a {
 }
 
 .hero {
-  display: block;
   background-image: url("https://t4.ftcdn.net/jpg/02/09/64/33/360_F_209643310_7tdlZx6oMF9iPqnt2PzbXdfYTNKGohdm.webp");
   background-repeat: no-repeat;
   position: bottom;
   background-size: cover;
-  height: 400px;
-  max-width: 100%;
+  height: auto;
+  width: 100%;
 }
 
 .hero-form {
   background-color: var(--white);
   color: black;
   width: 600px;
-  height: 100px;
+  height: 300px;
   margin: 0 auto;
   padding-top: 30px;
   border: solid;
   border-color: blue;
   text-align: center;
+}
+
+#response-container {
+  border: solid 2px black;
+}
+
+#edamam-response {
+  border: solid 2px black;
+}
+
+#edamam {
+  border: solid 2px black;
+}
+
+#documenu-response {
+  border: solid 2px black;
+}
+
+#documenu {
+  border: solid 2px black;
 }
 
 @media screen and (min-width: 600px) {

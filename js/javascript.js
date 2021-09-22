@@ -44,21 +44,25 @@ function myFunction() {
 
       containerEl.innerHTML = null;
       var imgEl = document.createElement("img");
-      imgEl.setAttribute("src");
+      imgEl.setAttribute("img");
       containerEl.appendChild(imgEl);
     ;
 
 
-var btn = document.getElementById("locate");
+var locateBtn = document.getElementById("#locate");
 
 //var el = document.getElementById("pure-button pure-button-primary");
 
-function firstfunction( ) {
+function firstfunction() {
   return fetch("https://edamam-food-and-grocery-database.p.rapidapi.com/parser?q=")
 .then(response => response.json())
 .then(json => (json.results))
 }
-btn.addEventListener("click", firstfunction);
+locateBtn.addEventListener("click", firstfunction);
+console.log(json.results)
+function secondfunction () {
+  return fetch()
+}
 
 //document.getElementById("locate");
 //el.addEventListener("click", function() {

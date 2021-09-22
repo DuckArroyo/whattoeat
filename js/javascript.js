@@ -15,6 +15,13 @@ function myFunction() {
       "&api_key" +
       "d5705ed4f7msh48cd378e1f7bdcfp184776jsnd69703bb9e74"
   )
+
+    .then((response) => response.json())
+    .then(data);
+  console.log(data);
+
+  // .then(function (response) {
+  //   console.log(response.data[0]);
   .then(
    function(response){
      return respomse.json()
@@ -36,23 +43,31 @@ function myFunction() {
     //.then(function (response) {
       //console.log(response.data[0]);
 
-      // .catch(err => {
-      // 	console.error(err);
-      // })
+  //   .catch(err => {console.error(err);})
 
-      var containerEl = document.querySelector("#box1");
+  //   var containerEl = document.querySelector("#box"); //! remove the 1
 
+  //   containerEl.innerHTML = null;
+  //   var imgEl = document.createElement("img");
+  //   imgEl.setAttribute("src");
+  //   containerEl.appendChild(imgEl);
+  // });
+}
       containerEl.innerHTML = null;
       var imgEl = document.createElement("img");
       imgEl.setAttribute("src");
       containerEl.appendChild(imgEl);
     ;
-
-
-var btn = document.getElementById("locate");
+var btn = document.getElementById("#locate"); //! Add the # for id.
 
 //var el = document.getElementById("pure-button pure-button-primary");
 
+
+// function firstTest() {
+//   confirm("Search for meals");
+// }
+
+// btn.addEventListener("click", firstTest);
 function firstfunction( ) {
   return fetch("https://edamam-food-and-grocery-database.p.rapidapi.com/parser?q=")
 .then(response => response.json())
@@ -66,15 +81,14 @@ btn.addEventListener("click", firstfunction);
 //})
 
 var score = 10;
-
-var scoreButtonEl = document.querySelector("#submiter"); //!Check in on submit button id.
-var scoreEl = document.querySelector("#score");
+var scoreButtonEl = document.querySelector("#locate"); //!Check in on submit button id.
+var scoreEl = document.querySelector("#scoreSpan");
 
 scoreButtonEl.addEventListener("click", function () {
   event.preventDefault();
   if (score > 0) {
     score--;
-    scoreEl.textContent = "Score: " + score;
+    scoreEl.textContent = score;
   }
 });
 

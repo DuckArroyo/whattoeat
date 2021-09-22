@@ -22,17 +22,18 @@
    
     <div class="pure-g">
         <section class="hero">
-        </section>
             <div class="pure-u-1">
                 <h2>What do you want to eat?</h2>
             </div>
+        </section>
+           
         
        
-            <div id="gif" class="inner-box">
+            <div id="gif" class="pure-u-1">
                 <img 
                     src="./images/WhatDoYouWantant.gif" 
                     alt="WHAT DO YOU WANT TO EAT?"
-                    style="border-radius: 30px; justify-content: center; max-width: 1000px; ">
+                    style="border-radius: 30px; justify-content: center;">
             </div>
        
         <!--! Form please change IDs as you best see fit. for the fetch queries.-->
@@ -48,7 +49,7 @@
                     </p>
                     <label for="stacked-email">Some info</label>
                     <input type="input" id="stacked-userentry" placeholder="user input" />
-                    <span class="pure-form-message">This is a required field.</span>
+                    <!-- <span class="pure-form-message">This is a required field.</span> -->
                     <label for="stacked-category">Category</label>
                     <select id="stacked-category" class="cuisineType">
                         <option>American</option>
@@ -76,31 +77,26 @@
               </fieldset>
             </form>
         </div>
-        </section>
-        <!---------------------------------------------------------
-            Empty boxes (3) to populate with results. They are mobile responsive
-         -->
+        
+        <div id="score"  class="pure-u-1" style="justify-content: center;">
+            <h2>Score: <span id="score">10</span></h2>
+        </div>
 
-        <div id="box"  class="pure-u-1" style="display: flex; flex-direction: column;">
-            <div id="option1"  class="pure-u-1
-            pure-u-md-1-2
-            pure-u-lg-1-4
-            inner-box">
+        </section id="response-container">
+    
+        <div id="edamam-response">
+
+            <!--------------------------------------------------------- -->
+            <div id="edamam">
             <p>box with style</p>
             </div>
+        </div>
+        <div id="documenu-response">
             <!--------------------------------------------------------- -->
-
-            <div id="option2"  class="pure-u-1
-            pure-u-md-1-2
-            pure-u-lg-1-4
-            inner-box">
+            <div id="documenu">
                 <p>box with style</p>
             </div>
-            <!--------------------------------------------------------- -->
-
-            <div id="score"  class="pure-u-1" style="justify-content: center;">
-                <h2>Score: <span id="score">10</span></h2>
-            </div>
+            
         </div>
     </div>
 

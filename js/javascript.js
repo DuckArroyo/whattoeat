@@ -1,3 +1,34 @@
+//Score
+var score = 10;
+var scoreButtonEl = document.querySelector("#locate"); //!Check in on submit button id.
+var scoreEl = document.querySelector("#scoreSpan");
+
+scoreButtonEl.addEventListener("click", function () {
+  event.preventDefault();
+  if (score > 0) {
+    score--;
+    scoreEl.textContent = score;
+  }
+});
+
+//Documenu fetch
+function getRestaurant(category, state) {
+  fetch(
+    "https://api.documenu.com/v2/restaurants/state/" +
+      state +
+      "?cuisine=" +
+      category +
+      "&key=0a3d92451c7ba73ea09adb2814dd9649"
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      buildcard(data);
+    });
+}
+
 function myFunction() {
   var stackeduserentry = document.querySelector("#stacked-userentry").value;
 
@@ -74,18 +105,6 @@ btn.addEventListener("click", firstfunction);
 //el.addEventListener("click", function() {
 //myFunction();
 //})
-
-var score = 10;
-var scoreButtonEl = document.querySelector("#locate"); //!Check in on submit button id.
-var scoreEl = document.querySelector("#scoreSpan");
-
-scoreButtonEl.addEventListener("click", function () {
-  event.preventDefault();
-  if (score > 0) {
-    score--;
-    scoreEl.textContent = score;
-  }
-});
 
 // var apiKey = "359d18be100f928817fd7d3a21693376";
 

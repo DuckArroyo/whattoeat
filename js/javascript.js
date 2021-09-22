@@ -123,3 +123,7 @@ scoreButtonEl.addEventListener("click", function () {
 //       alert("Unable to connect to Documenu");
 //     });
 // };
+
+var categoregy = $("#cuisinetype") .val;
+
+ 

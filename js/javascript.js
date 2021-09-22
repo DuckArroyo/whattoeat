@@ -1,6 +1,6 @@
 //Score
 var score = 10;
-var scoreButtonEl = document.querySelector("#locate"); //!Check in on submit button id.
+var scoreButtonEl = document.querySelector("#locate");
 var scoreEl = document.querySelector("#scoreSpan");
 
 scoreButtonEl.addEventListener("click", function () {

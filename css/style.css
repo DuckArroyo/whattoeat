@@ -113,8 +113,6 @@ legend {
   margin: 5px;
   padding: 10px;
   display: inline-block;
-  width: 100px;
-  height: 100px;
 }
 
 .hero-form {
@@ -165,9 +163,11 @@ footer h3 {
 #response-container {
   --hue: var(--hue-wrong);
   background-color: hsl(var(--hue), 100%, 20%);
+  border: solid 0.5px black;
   border-radius: 10px;
   margin: 30px;
   padding: 25px;
+  max-width: 100vh;
 }
 
 #edamam-response {

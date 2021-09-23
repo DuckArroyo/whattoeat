@@ -45,7 +45,7 @@ function getDocumenu() {
 
 //getDocumenu(); //remove when buttons are ready
 
-//Yelp Fusion fetch
+//Foodish fetch
 function getFoodish() {
   console.log("called");
   fetch("https://foodish-api.herokuapp.com/api/")
@@ -54,6 +54,15 @@ function getFoodish() {
     })
     .then(function (random) {
       console.log(random);
+      responseContainerEl.appendChild(documenuResponseEl);
+      documenuResponseEl.appendChild(documenuEl);
+      var card = document.createElement("div");
+      card.setAttribute("id", "imageDiv");
+      card.setAttribute("class", "card");
+      documenuEl.appendChild(card);
+      img = document.createElement("img");
+      img.src = random.image;
+      card.appendChild(img);
     });
 }
 
@@ -117,8 +126,12 @@ function buildEdamamCard(data) {
     card.setAttribute("class", "edamam");
     edamamEl.appendChild(card);
     //Image
+    img = document.createElement("img");
+    img.src = data.hits[i].recipe.image;
+    img.setAttribute("class", "card");
+    card.appendChild(img);
     // console.log(data.hits[i].recipe.image);
-    //var photo = data.hits[i].recipe.image;
+    //var photo = ;
     // .attr("src" data.hits[i].recipe.image)
     // .addClass("thumb")
     // label

@@ -27,9 +27,14 @@ var documenuEl = document.querySelector("#documenu");
 function getDocumenu() {
   console.log(cuisine);
   console.log(state);
-  fetch(
-    "https://api.documenu.com/v2/restaurants/search/fields?state=oregon&cuisine=mexican&top_cuisines=false&zip_code=97403&key=359d18be100f928817fd7d3a21693376"
-  )
+  fetch()
+    // "https://api.documenu.com/v2/restaurants/search/fields?state=oregon&cuisine=mexican&top_cuisines=false&zip_code=97403&key=359d18be100f928817fd7d3a21693376"
+    // //!OR
+    // "https://api.documenu.com/v2/restaurants/search/fields?state="
+    // + state +
+    // "&cuisine="
+    // + cuisine +
+    // "&top_cuisines=false&key=359d18be100f928817fd7d3a21693376"
     .then(function (response) {
       return response.json();
     })
@@ -38,12 +43,24 @@ function getDocumenu() {
     });
 }
 
-getDocumenu(); //remove when buttons are ready
+//getDocumenu(); //remove when buttons are ready
+
+//Yelp Fusion fetch
+function getFoodish() {
+  console.log("called");
+  fetch("https://foodish-api.herokuapp.com/api/")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (random) {
+      console.log(random);
+    });
+}
 
 //Edamam fetch
 function getEdamam(user, cuisine) {
-  // console.log(user);
-  // console.log(cuisine);
+  console.log(user);
+  console.log(cuisine);
   fetch(
     "https://api.edamam.com/api/recipes/v2?type=public&q=" +
       user +
@@ -134,10 +151,16 @@ function reset() {
   documenuResponseEl.innerHTML = "";
 }
 
-//getEdamamEl.addEventListener("click", getEdamam(user, cuisine)); //!This is triggering by default
-//getDocumenuEl.addEventListener("click", getDocumenu(cuisine, state)); //!This is triggering by default
+//! Having a hard time coding the buttons. Get them to pass the correct fields hardcoded but not from the button press
+// getEdamamEl.addEventListener("click", getEdamam); //!This is triggering by default
+// getDocumenuEl.addEventListener("click", getDocumenu(cuisine, state)); //!This is triggering by default
+
+//!Currently runnin edamam and foodish off score button
+
 scoreButtonEl.addEventListener("click", function () {
   event.preventDefault();
+  getFoodish();
+  getEdamam("tacos", "mexican");
   console.log("Search button pressed");
   if (score > 0) {
     score--;

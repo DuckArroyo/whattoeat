@@ -177,7 +177,7 @@ footer h3 {
   border-radius: 5px;
   margin: 5px;
   padding: 10px;
-  --hue: var(--hue-wrong);
+  --hue: var(--hue-neutral);
   background-color: hsl(var(--hue), 100%, 20%);
 }
 

@@ -4,8 +4,8 @@ var scoreButtonEl = document.querySelector("#locate");
 var scoreEl = document.querySelector("#scoreSpan");
 
 //buttons
-var getDocumenuEl = document.getElementById("#locate");
-var getEdamamEl = document.getElementById("#locate");
+var getDocumenuEl = document.querySelector("#locate");
+var getEdamamEl = document.querySelector("#locate");
 
 var user = document.querySelector("#userInput").value;
 // console.log(user);
@@ -23,8 +23,10 @@ var documenuResponseEl = document.querySelector("#documenu-response");
 var edamamEl = document.querySelector("#edamam");
 var documenuEl = document.querySelector("#documenu");
 
-//Documenu fetch
+//Documenu fetch ! Add "cuisine, state" inside getDocumenu to pass argument
 function getDocumenu() {
+  console.log(cuisine);
+  console.log(state);
   fetch(
     "https://api.documenu.com/v2/restaurants/search/fields?state=oregon&cuisine=mexican&top_cuisines=false&zip_code=97403&key=359d18be100f928817fd7d3a21693376"
   )
@@ -36,10 +38,12 @@ function getDocumenu() {
     });
 }
 
-//getDocumenu(); //remove when buttons are ready
+getDocumenu(); //remove when buttons are ready
 
 //Edamam fetch
-function getEdamam() {
+function getEdamam(user, cuisine) {
+  // console.log(user);
+  // console.log(cuisine);
   fetch(
     "https://api.edamam.com/api/recipes/v2?type=public&q=" +
       user +
@@ -58,7 +62,7 @@ function getEdamam() {
     });
 }
 
-getEdamam(); //remove when buttons are ready
+//getEdamam("burger", "american"); //remove when buttons are ready
 
 function buildDocumenuCard(answer) {
   console.log(answer.data);
@@ -121,7 +125,7 @@ function buildEdamamCard(data) {
     var makesEl = document.createElement("p");
     makesEl.textContent = "Makes: " + makes + " servings.";
     card.appendChild(makesEl);
-  } //!KEEP
+  }
 }
 
 function reset() {
@@ -130,8 +134,8 @@ function reset() {
   documenuResponseEl.innerHTML = "";
 }
 
-//getEdamamEl.addEventListener("click", getEdamam);
-//getDocumenuEl.addEventListener("click", getDocumenu);
+//getEdamamEl.addEventListener("click", getEdamam(user, cuisine)); //!This is triggering by default
+//getDocumenuEl.addEventListener("click", getDocumenu(cuisine, state)); //!This is triggering by default
 scoreButtonEl.addEventListener("click", function () {
   event.preventDefault();
   console.log("Search button pressed");

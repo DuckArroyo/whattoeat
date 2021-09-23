@@ -62,7 +62,7 @@ h2 {
 }
 
 h1 {
-  background-color: var(--green);
+  background-color: var(--hue-wrong);
   color: white;
   text-align: center;
   padding: 20px;
@@ -104,6 +104,7 @@ legend {
   padding: 20px auto;
 }
 
+/*! Not being used now */
 .card {
   border: solid 2px black;
   border-radius: 5px;
@@ -159,43 +160,44 @@ footer h3 {
 }
 
 #response-container {
-  border: solid 2px black;
+  --hue: var(--hue-wrong);
+  background-color: hsl(var(--hue), 100%, 20%);
+  border-radius: 10px;
+  margin: 30px;
+  padding: 25px;
 }
 
 #edamam-response {
-  border: solid 2px red;
   border-radius: 5px;
   margin: 5px;
 }
 
 .edamam {
   border: solid 2px white;
-  background-color: rgba(212, 186, 186, 0.8);
   border-radius: 5px;
   margin: 5px;
   padding: 10px;
+  --hue: var(--hue-wrong);
+  background-color: hsl(var(--hue), 100%, 20%);
 }
 
 .thumb {
   display: block;
   margin: 5px auto;
-  /* width: 50px;
-  height: auto; */
+  width: 150px;
+  height: auto;
 }
 
 #documenu-response {
-  border: solid 2px red;
   border-radius: 5px;
   margin: 5px;
 }
 
 .documenu {
   border: solid 2px white;
-  background-color: rgba(194, 115, 115, 0.8);
   height: 50px;
   border-radius: 5px;
   margin: 5px;
+  --hue: var(--hue-correct);
+  background-color: hsl(var(--hue), 100%, 20%);
 }
-
-/* @media screen and (min-width: 600px) {
-} */

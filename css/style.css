@@ -20,6 +20,7 @@ body {
 .hide {
   display: none;
 }
+
 h2 {
   --hue: var(--hue-correct);
   /* color: var(--white); */

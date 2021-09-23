@@ -98,7 +98,7 @@ legend {
 .hero-form {
   background-color: var(--white);
   padding: 30px;
-  width: 400px;
+  width: 550px;
   float: center;
   border-width: 3px;
   bottom: 485px;
@@ -143,19 +143,23 @@ footer h3 {
 }
 
 #edamam-response {
-  border: solid 2px black;
+  border: solid 2px red;
 }
 
 #edamam {
-  border: solid 2px black;
+  border: solid 2px white;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 50px;
 }
 
 #documenu-response {
-  border: solid 2px black;
+  border: solid 2px red;
 }
 
 #documenu {
-  border: solid 2px black;
+  border: solid 2px white;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 50px;
 }
 
 @media screen and (min-width: 600px) {

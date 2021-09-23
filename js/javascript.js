@@ -3,8 +3,16 @@ var score = 10;
 var scoreButtonEl = document.querySelector("#locate");
 var scoreEl = document.querySelector("#scoreSpan");
 
+var user = document.querySelector("#aligned-foo");
+var category = document.querySelector("#cuisineType");
+var state = document.querySelector("#state");
+var responseContainerEl = document.querySelector("#response-container");
+var edamamResponseEl = document.querySelector("#edamam-response");
+var documenuResponseEl = document.querySelector("#documenu-response");
+
 scoreButtonEl.addEventListener("click", function () {
   event.preventDefault();
+  console.log("Search button pressed");
   if (score > 0) {
     score--;
     scoreEl.textContent = score;
@@ -12,23 +20,49 @@ scoreButtonEl.addEventListener("click", function () {
 });
 
 //Documenu fetch
-function getRestaurant(category, state) {
+function getDocumenu() {
   fetch(
     "https://api.documenu.com/v2/restaurants/state/" +
       state +
       "?cuisine=" +
       category +
-      "&key=0a3d92451c7ba73ea09adb2814dd9649"
+      "&key=359d18be100f928817fd7d3a21693376"
   )
     .then(function (response) {
+      console.log(response);
       return response.json();
     })
     .then(function (data) {
-      buildcard(data);
+      console.log(data);
+      if (data == 200) {
+        console.log("Documenu Success");
+        // buildDocumenuCard(data);
+      } else {
+        alert("document fetch Error");
+      }
     });
 }
 
-function buildcard(data) {
+//getDocumenu(); //remove when buttons are ready
+
+//Edamam fetch
+function getEdamam() {
+  fetch(
+    "https://api.edamam.com/api/recipes/v2?type=public&q=burger&app_id=9d877ffc&app_key=d41009055184f2d73ec327f4ab82da3b&cuisineType=american"
+  ) //where burger is var user and cuisineType is category
+    .then(function (response) {
+      //console.log(response); Works delete when done
+      return response.json();
+    })
+    .then(function (data) {
+      console.log("Edamam Success"); //Works delete when done
+      buildEdamamCard(data);
+    });
+}
+
+getEdamam(); //remove when buttons are ready
+
+function buildDocumenuCard(data) {
   console.log(data);
   var title = data.data[0].restaurant_name;
   var htmlTitle = $("h1").text(title);
@@ -36,34 +70,28 @@ function buildcard(data) {
   //! Bryan write your code here
 }
 
-getRestaurant(Restaurant, State); //remove later
-
-//Edamam fetch
-function getEdamam() {
-  var stackeduserentry = document.querySelector("#stacked-userentry").value;
-
-  fetch(
-    "https://edamam-food-and-grocery-database.p.rapidapi.com/parser?q=" +
-      stackeduserentry +
-      "&api_key" +
-      "d5705ed4f7msh48cd378e1f7bdcfp184776jsnd69703bb9e74"
-  )
-    .then((response) => response.json())
-    .then(data);
+function buildEdamamCard(data) {
   console.log(data);
+  var title = data.hits[0].recipe;
+  console.log("data.hits[0].recipe.label");
+  console.log(data.hits[0].recipe.label);
+  console.log("data.hits[0].recipe.source");
+  console.log(data.hits[0].recipe.source);
+  console.log("data.hits[0].recipe.shareAs");
+  console.log(data.hits[0].recipe.shareAs);
+  console.log("data.hits[0].recipe.source");
+  console.log(data.hits[0].recipe.source);
+
+  var htmlTitle = title;
+  $("#edamam").append(htmlTitle);
+
+  //!This loop works. We will use it to loop through the responses
+  // for (i = 0; i <= history.length; i++) {
+  //   console.log("0");
+  //   console.log(data.hits[0].recipe);
+  // }
+  //!KEEP
 }
-      .then(function (response) {
-      console.log(response.data[0]);
 
-        .catch(err => {console.error(err);})
-
-        var containerEl = document.querySelector("#box"); //! edamam or edamam response in html
-
-        containerEl.innerHTML = null;
-        var imgEl = document.createElement("img");
-        imgEl.setAttribute("src");
-        containerEl.appendChild(imgEl);
-      });
-      }
-
-var btn = document.getElementById("#locate"); //! Still good
+var search = document.getElementById("#locate"); //! Still good
+console.log("Bottom of JavaScript");

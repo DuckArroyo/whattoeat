@@ -70,10 +70,12 @@ function getFoodish() {
 //Edamam fetch
 function getEdamam() {
   //console.log("called Edamam");
+
   var user = document.querySelector("#userInput").value;
   console.log(user);
   var cuisine = document.querySelector("#cuisineType").value;
   console.log(cuisine);
+
   fetch(
     "https://api.edamam.com/api/recipes/v2?type=public&q=" +
       user +
@@ -145,7 +147,8 @@ function buildEdamamCard(data) {
     //recipe url - create an href
     var url = data.hits[i].recipe.shareAs;
     var urlEl = document.createElement("a");
-    urlEl.textContent = '<a href="' + url + '" target="_blank">';
+    urlEl.setAttribute("href", url + ' target="_blank">');
+    urlEl.textContent = "Link to the recipe";
     //urlEl.textContent = "Link to page";
     card.appendChild(urlEl);
     //Makes

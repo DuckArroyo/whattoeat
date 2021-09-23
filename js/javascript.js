@@ -147,9 +147,10 @@ function buildEdamamCard(data) {
     //recipe url - create an href
     var url = data.hits[i].recipe.shareAs;
     var urlEl = document.createElement("a");
-    urlEl.setAttribute("href", url + ' target="_blank">');
+    urlEl.setAttribute("href", url + '"' + ' target="_blank">');
+    console.log(urlEl);
     urlEl.textContent = "Link to the recipe";
-    //urlEl.textContent = "Link to page";
+    console.log(urlEl);
     card.appendChild(urlEl);
     //Makes
     var makes = data.hits[i].recipe.yield;

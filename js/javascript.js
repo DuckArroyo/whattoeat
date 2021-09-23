@@ -113,3 +113,5 @@ function buildEdamamCard(data) {
 
 var search = document.getElementById("#locate"); //! Still good
 console.log("Bottom of JavaScript");
+
+edmamFetch();

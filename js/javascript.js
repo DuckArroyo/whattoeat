@@ -83,11 +83,11 @@ function buildDocumenuCard(answer) {
 }
 
 function buildEdamamCard(data) {
-  console.log(data);
+  // console.log(data);
 
   responseContainerEl.appendChild(edamamResponseEl);
   edamamResponseEl.appendChild(edamamEl);
-  console.log(data.hits);
+  // console.log(data.hits);
 
   for (i = 0; i <= data.hits.length; i++) {
     //Container for each card
@@ -101,26 +101,22 @@ function buildEdamamCard(data) {
     // .attr("src" data.hits[i].recipe.image)
     // .addClass("thumb")
     // label
-    console.log(data.hits[i].recipe.label);
     var recipeName = data.hits[i].recipe.label; //write variables for each item that need to be displayed
     var recipeNameEl = document.createElement("h4");
     recipeNameEl.textContent = recipeName;
     card.appendChild(recipeNameEl);
     //recipe source
-    console.log(data.hits[i].recipe.source);
     var source = data.hits[i].recipe.source;
     var sourceEl = document.createElement("p");
     sourceEl.textContent = source;
     card.appendChild(sourceEl);
     //recipe url - create an href
-    console.log(data.hits[i].recipe.shareAs);
     var url = data.hits[i].recipe.shareAs;
     var urlEl = document.createElement("a");
     urlEl.textContent = '<a href="' + url + '" target="_blank">';
     //urlEl.textContent = "Link to page";
     card.appendChild(urlEl);
     //Makes
-    console.log(data.hits[i].recipe.yield);
     var makes = data.hits[i].recipe.yield;
     var makesEl = document.createElement("p");
     makesEl.textContent = "Makes: " + makes + " servings.";

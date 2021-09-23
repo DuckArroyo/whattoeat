@@ -1,78 +1,4 @@
-<<<<<<< HEAD
-function myFunction() {
-  var stackeduserentry = document.querySelector("#stacked-userentry").value;
-
-  // fetch("https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr=apple", {
-  // 	"method": "GET",
-  // 	"headers": {
-  // 		"x-rapidapi-host": "edamam-food-and-grocery-database.p.rapidapi.com",
-  // 		"x-rapidapi-key": "d5705ed4f7msh48cd378e1f7bdcfp184776jsnd69703bb9e74"
-  // 	}
-  // })
-
-  fetch(
-    "https://edamam-food-and-grocery-database.p.rapidapi.com/parser?q=" +
-      stackeduserentry +
-      "&api_key" +
-      "d5705ed4f7msh48cd378e1f7bdcfp184776jsnd69703bb9e74"
-  )
-  .then(
-   function(response){
-     return respomse.json()
-   }
-  ).then(
-    function(data){
-      console.log(data)
-    }
-  )
-    // .then(response => {
-    // 	return response.json();
-    // 	console.log(response.data[0]);
-    // })
-
-
-
-
-}
-    //.then(function (response) {
-      //console.log(response.data[0]);
-
-      // .catch(err => {
-      // 	console.error(err);
-      // })
-
-      var containerEl = document.querySelector("#box1");
-
-      containerEl.innerHTML = null;
-      var imgEl = document.createElement("img");
-      imgEl.setAttribute("img");
-      containerEl.appendChild(imgEl);
-    ;
-
-
-var locateBtn = document.getElementById("#locate");
-
-//var el = document.getElementById("pure-button pure-button-primary");
-
-function firstfunction() {
-  return fetch("https://edamam-food-and-grocery-database.p.rapidapi.com/parser?q=")
-.then(response => response.json())
-.then(json => (json.results))
-}
-locateBtn.addEventListener("click", firstfunction);
-console.log(json.results)
-function secondfunction () {
-  return fetch()
-}
-
-//document.getElementById("locate");
-//el.addEventListener("click", function() {
-//myFunction();
-//})
-
-=======
 //Score
->>>>>>> Develop
 var score = 10;
 var scoreButtonEl = document.querySelector("#locate"); //!Check in on submit button id.
 var scoreEl = document.querySelector("#scoreSpan");
@@ -146,7 +72,7 @@ function edmamFetch (category, state){
             .addClass("category")
             .text(response.articles[0].source.name);
 
-<<<<<<< Updated upstream
+
             var linktosite = $("<a>")
             .addClass("btn btn-primary siteLink")
             .attr("href", response.articles[0].url)
@@ -164,8 +90,7 @@ function edmamFetch (category, state){
             var cardDiv = $("<div>").addClass("cards");   
             cardDiv.append(newDiv).append(newsContentDiv);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 //   // make a get request to url
 //   fetch(
 //     "https://api.documenu.com/v2/restaurant/4072702673999819",
@@ -191,21 +116,19 @@ function edmamFetch (category, state){
 var categoregy = $("#cuisinetype") .val;
 
  
-=======
+
 var btn = document.getElementById("#locate"); //! Still good
->>>>>>> Develop
-=======
+
             var responsiveDiv = $("<div>").addClass("col-sm-4");
             responsiveDiv.append(cardDiv);
             $(".cardRow" + rowNum).append(responsiveDiv);
   
 var btn = document.getElementById("#locate"); //! Still good
 }
->>>>>>> Develop
-=======
+
 var btn = document.getElementById("#locate"); //! Still good
 
 var category = $("#cuisinetype"()).val;
 
 var state = $("#stcked-state"()).val;
->>>>>>> Stashed changes
+

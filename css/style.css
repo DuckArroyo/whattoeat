@@ -2,6 +2,9 @@
   --green: #69896f;
   --white: #ffffff;
   --rust: #8b0000;
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
 }
 /*!Global styles */
 * {
@@ -10,12 +13,17 @@
 }
 
 body {
-  background-color: tomato;
+  --hue: var(--hue-neutral);
+  background-color: hsl(var(--hue), 100%, 20%);
+}
+
+.hide {
+  display: none;
 }
 
 h2 {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: var(--white);
+  --hue: var(--hue-correct);
+  /* color: var(--white); */
   text-align: left;
   padding: 40px 60px;
   margin: 0px;
@@ -44,6 +52,7 @@ h2 {
 
 .button-warning {
   background: rgb(223, 117, 20);
+  margin-left: 250px;
   /* this is an orange */
 }
 
@@ -53,7 +62,7 @@ h2 {
 }
 
 h1 {
-  background-color: var(--green);
+  background-color: var(--hue-wrong);
   color: white;
   text-align: center;
   padding: 20px;
@@ -95,14 +104,27 @@ legend {
   padding: 20px auto;
 }
 
+/*! Not being used now */
+.card {
+  border: solid 2px black;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
 .hero-form {
   background-color: var(--white);
   padding: 30px;
+  margin: 30px;
   width: 550px;
-  float: center;
+  position: relative;
+  left: 40px;
   border-width: 3px;
-  bottom: 485px;
-  right: 140px;
   box-shadow: 0 0 20px 5px;
   border-radius: 10px;
 }
@@ -141,35 +163,42 @@ footer h3 {
 }
 
 #response-container {
-  border: solid 2px black;
+  --hue: var(--hue-wrong);
+  background-color: hsl(var(--hue), 100%, 20%);
+  border-radius: 10px;
+  margin: 30px;
+  padding: 25px;
 }
 
 #edamam-response {
-  border: solid 2px red;
+  border-radius: 5px;
+  margin: 5px;
 }
 
-#edamam {
+.edamam {
   border: solid 2px white;
-  background-color: rgba(0, 0, 0, 0.2);
-  height: 50px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .thumb {
   display: block;
   margin: 5px auto;
-  /* width: 50px;
-  height: auto; */
+  width: 150px;
+  height: auto;
 }
 
 #documenu-response {
-  border: solid 2px red;
+  border-radius: 5px;
+  margin: 5px;
 }
 
-#documenu {
+.documenu {
   border: solid 2px white;
-  background-color: rgba(0, 0, 0, 0.2);
   height: 50px;
-}
-
-@media screen and (min-width: 600px) {
+  border-radius: 5px;
+  margin: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
 }

@@ -55,7 +55,7 @@ function getEdamam() {
     });
 }
 
-//getEdamam(); //remove when buttons are ready
+getEdamam(); //remove when buttons are ready
 
 function buildDocumenuCard(data) {
   console.log(data);

@@ -51,9 +51,9 @@ function getEdamam() {
   //console.log("called Edamam");
 
   var user = document.querySelector("#userInput").value;
-  console.log(user);
+  //console.log(user);
   var cuisine = document.querySelector("#cuisineType").value;
-  console.log(cuisine);
+  //console.log(cuisine);
 
   fetch(
     "https://api.edamam.com/api/recipes/v2?type=public&q=" +
@@ -75,6 +75,7 @@ function getEdamam() {
 function buildEdamamCard(data) {
   // console.log(data);
 
+  responseContainerEl.classList.remove("hide");
   responseContainerEl.appendChild(edamamResponseEl);
   edamamResponseEl.appendChild(edamamEl);
   // console.log(data.hits);
@@ -103,7 +104,7 @@ function buildEdamamCard(data) {
     var url = data.hits[i].recipe.shareAs;
     var urlEl = document.createElement("a");
     urlEl.setAttribute("href", url + '"' + ' target="_blank">');
-    console.log(urlEl);
+    //console.log(urlEl);
     urlEl.textContent = "Link to the recipe";
     console.log(urlEl);
     card.appendChild(urlEl);
@@ -163,6 +164,7 @@ function reset() {
   // event.preventDefault();
   edamamResponseEl.innerHTML = "";
   documenuResponseEl.innerHTML = "";
+  responseContainerEl.addClass("hide");
 }
 
 //! Having a hard time coding the buttons. Get them to pass the correct fields hardcoded but not from the button press
@@ -175,10 +177,10 @@ scoreButtonEl.addEventListener("click", function () {
   event.preventDefault();
   getFoodish();
   getEdamam();
-  console.log("Search button pressed");
+  //console.log("Search button pressed");
   if (score > 0) {
     score--;
     scoreEl.textContent = score;
   }
 });
-console.log("Bottom of JavaScript");
+//console.log("Bottom of JavaScript");

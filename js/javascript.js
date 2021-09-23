@@ -1,6 +1,8 @@
 //Score
 var score = 10;
-var scoreButtonEl = document.querySelector("#locate");
+//var scoreButtonEl = document.querySelector("#locate");
+var getDocumenuEl = document.querySelector("#locate");
+
 var scoreEl = document.querySelector("#scoreSpan");
 
 var user = document.querySelector("#aligned-foo");
@@ -10,40 +12,33 @@ var responseContainerEl = document.querySelector("#response-container");
 var edamamResponseEl = document.querySelector("#edamam-response");
 var documenuResponseEl = document.querySelector("#documenu-response");
 
-scoreButtonEl.addEventListener("click", function () {
-  event.preventDefault();
-  console.log("Search button pressed");
-  if (score > 0) {
-    score--;
-    scoreEl.textContent = score;
-  }
-});
+// scoreButtonEl.addEventListener("click", function () {
+//   event.preventDefault();
+//   console.log("Search button pressed");
+//   if (score > 0) {
+//     score--;
+//     scoreEl.textContent = score;
+//   }
+// });
 
+getDocumenuEl.addEventListener("click", getDocumenu);
 //Documenu fetch
-function getDocumenu() {
+function getDocumenu(category, state) {
   fetch(
     "https://api.documenu.com/v2/restaurants/state/" +
       state +
       "?cuisine=" +
       category +
-      "&key=359d18be100f928817fd7d3a21693376"
+      "&key=0a3d92451c7ba73ea09adb2814dd9649"
   )
     .then(function (response) {
-      console.log(response);
       return response.json();
     })
     .then(function (data) {
       console.log(data);
-      if (data == 200) {
-        console.log("Documenu Success");
-        // buildDocumenuCard(data);
-      } else {
-        alert("document fetch Error");
-      }
+      //buildcard(data)
     });
 }
-
-//getDocumenu(); //remove when buttons are ready
 
 //Edamam fetch
 function getEdamam() {
@@ -60,7 +55,7 @@ function getEdamam() {
     });
 }
 
-getEdamam(); //remove when buttons are ready
+//getEdamam(); //remove when buttons are ready
 
 function buildDocumenuCard(data) {
   console.log(data);

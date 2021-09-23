@@ -103,6 +103,8 @@ legend {
   border-width: 3px;
   bottom: 485px;
   right: 140px;
+  box-shadow: 0 0 20px 5px;
+  border-radius: 10px;
 }
 
 .hero-form p {

@@ -72,25 +72,48 @@ function buildDocumenuCard(data) {
 
 function buildEdamamCard(data) {
   console.log(data);
-  var title = data.hits[0].recipe;
-  console.log("data.hits[0].recipe.label");
-  console.log(data.hits[0].recipe.label);
-  console.log("data.hits[0].recipe.source");
-  console.log(data.hits[0].recipe.source);
-  console.log("data.hits[0].recipe.shareAs");
-  console.log(data.hits[0].recipe.shareAs);
-  console.log("data.hits[0].recipe.source");
-  console.log(data.hits[0].recipe.source);
 
-  var htmlTitle = title;
-  $("#edamam").append(htmlTitle);
+  responseContainerEl.appendChild(edamamResponseEl);
 
   //!This loop works. We will use it to loop through the responses
-  // for (i = 0; i <= history.length; i++) {
-  //   console.log("0");
-  //   console.log(data.hits[0].recipe);
-  // }
-  //!KEEP
+  // for (i = 0; i <= data.hits.length; i++) {
+  console.log("0");
+  console.log(data.hits[0].recipe);
+  //Container for each card
+  var card = document.createElement("div");
+  card.setAttribute("id", "recipeDiv");
+  card.setAttribute("class", "card");
+  edamamResponseEl.appendChild(card);
+  //Image
+  console.log("data.hits[0].recipe.image");
+  console.log(data.hits[0].recipe.image);
+
+  var photo = data.hits[0].recipe.image;
+  // .attr("src" data.hits[0].recipe.image)
+  // .addClass("thumb")
+  // label
+  console.log("data.hits[0].recipe.label");
+  console.log(data.hits[0].recipe.label);
+  var recipeName = data.hits[0].recipe.label; //write variables for each item that need to be displayed
+  var recipeNameEl = document.createElement("h4");
+  recipeNameEl.textContent = recipeName;
+  card.appendChild(recipeNameEl);
+  //recipe source
+  console.log("data.hits[0].recipe.source");
+  console.log(data.hits[0].recipe.source);
+  var source = data.hits[0].recipe.source;
+  var sourceEl = document.createElement("p");
+  sourceEl.textContent = source;
+  card.appendChild(sourceEl);
+  //recipe url - create an href
+  console.log("data.hits[0].recipe.shareAs");
+  console.log(data.hits[0].recipe.shareAs);
+  var url = data.hits[0].recipe.shareAs;
+  var urlEl = document.createElement("a");
+  urlEl.innerHTML = "<a href='" + url + " target='_blank'>";
+  urlEl.textContent = "Link to page";
+  card.appendChild(urlEl);
+  //} //!KEEP
 }
 
 var search = document.getElementById("#locate"); //! Still good

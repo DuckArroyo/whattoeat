@@ -152,6 +152,13 @@ footer h3 {
   height: 50px;
 }
 
+.thumb {
+  display: block;
+  margin: 5px auto;
+  /* width: 50px;
+  height: auto; */
+}
+
 #documenu-response {
   border: solid 2px red;
 }

@@ -11,6 +11,8 @@ var state = document.querySelector("#state");
 var responseContainerEl = document.querySelector("#response-container");
 var edamamResponseEl = document.querySelector("#edamam-response");
 var documenuResponseEl = document.querySelector("#documenu-response");
+var edamamEl = document.querySelector("#edamam");
+var documenuEl = document.querySelector("#documenu");
 
 //Documenu fetch
 function getDocumenu() {
@@ -50,13 +52,22 @@ function getEdamam() {
 function buildDocumenuCard(answer) {
   console.log(answer.data);
   console.log(answer.data[0]);
+
+  responseContainerEl.appendChild(documenuResponseEl);
+  documenuResponseEl.appendChild(documenuEl);
+
   for (i = 0; i <= answer.data.length; i++) {
-    console.log(answer.data[i].restaurant_name);
     //Container for each card
     var card = document.createElement("div");
     card.setAttribute("id", "restaurantDiv");
     card.setAttribute("class", "card");
-    edamamResponseEl.appendChild(card);
+    documenuEl.appendChild(card);
+    console.log("answer.data[i].restaurant_name");
+    console.log(answer.data[i].restaurant_name);
+    var restaurantName = answer.data[0].restaurant_name;
+    var restaurantNameEl = createElement("h4");
+    restaurantNameEl.textContent = restaurantName;
+    card.appendChild();
   }
 }
 
@@ -64,6 +75,7 @@ function buildEdamamCard(data) {
   console.log(data);
 
   responseContainerEl.appendChild(edamamResponseEl);
+  edamamResponseEl.appendChild(EdamamEl);
   console.log(data.hits);
 
   //!This loop works. We will use it to loop through the responses
@@ -72,7 +84,7 @@ function buildEdamamCard(data) {
     var card = document.createElement("div");
     card.setAttribute("id", "recipeDiv");
     card.setAttribute("class", "card");
-    edamamResponseEl.appendChild(card);
+    edamamEl.appendChild(card);
     //Image
     // console.log("data.hits[i].recipe.image");
     // console.log(data.hits[i].recipe.image);
@@ -109,6 +121,12 @@ function buildEdamamCard(data) {
     makesEl.textContent = "Makes: " + makes + " servings.";
     card.appendChild(makesEl);
   } //!KEEP
+}
+
+function reset() {
+  // event.preventDefault();
+  edamamResponseEl.innerHTML = "";
+  documenuResponseEl.innerHTML = "";
 }
 
 var search = document.getElementById("#locate"); //! Still good

@@ -1,10 +1,10 @@
 //Score
 var score = 10;
-//var scoreButtonEl = document.querySelector("#locate");
+var scoreButtonEl = document.querySelector("#locate");
 var getDocumenuEl = document.querySelector("#locate");
+var getEdamamEl = document.querySelector("#locate");
 
 var scoreEl = document.querySelector("#scoreSpan");
-
 var user = document.querySelector("#aligned-foo");
 var category = document.querySelector("#cuisineType");
 var state = document.querySelector("#state");
@@ -12,16 +12,6 @@ var responseContainerEl = document.querySelector("#response-container");
 var edamamResponseEl = document.querySelector("#edamam-response");
 var documenuResponseEl = document.querySelector("#documenu-response");
 
-// scoreButtonEl.addEventListener("click", function () {
-//   event.preventDefault();
-//   console.log("Search button pressed");
-//   if (score > 0) {
-//     score--;
-//     scoreEl.textContent = score;
-//   }
-// });
-
-getDocumenuEl.addEventListener("click", getDocumenu);
 //Documenu fetch
 function getDocumenu(category, state) {
   fetch(
@@ -77,7 +67,7 @@ function buildEdamamCard(data) {
   //Container for each card
   var card = document.createElement("div");
   card.setAttribute("id", "recipeDiv");
-  card.setAttribute("class", "card");
+  card.setAttribute("class", "edamam");
   edamamResponseEl.appendChild(card);
   //Image
   console.log("data.hits[0].recipe.image");
@@ -112,6 +102,14 @@ function buildEdamamCard(data) {
 }
 
 var search = document.getElementById("#locate"); //! Still good
-console.log("Bottom of JavaScript");
 
-edmamFetch();
+getDocumenuEl.addEventListener("click", getDocumenu);
+scoreButtonEl.addEventListener("click", function () {
+  event.preventDefault();
+  console.log("Search button pressed");
+  if (score > 0) {
+    score--;
+    scoreEl.textContent = score;
+  }
+});
+console.log("Bottom of JavaScript");

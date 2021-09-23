@@ -2,6 +2,9 @@
   --green: #69896f;
   --white: #ffffff;
   --rust: #8b0000;
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
 }
 /*!Global styles */
 * {
@@ -10,12 +13,16 @@
 }
 
 body {
-  background-color: tomato;
+  --hue: var(--hue-neutral);
+  background-color: hsl(var(--hue), 100%, 20%);
 }
 
+.hide {
+  display: none;
+}
 h2 {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: var(--white);
+  --hue: var(--hue-correct);
+  /* color: var(--white); */
   text-align: left;
   padding: 40px 60px;
   margin: 0px;
@@ -95,14 +102,23 @@ legend {
   padding: 20px auto;
 }
 
+.card {
+  border: solid 2px black;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+}
+
 .hero-form {
   background-color: var(--white);
   padding: 30px;
+  margin: 30px;
   width: 550px;
-  float: center;
+  position: relative;
+  left: 40px;
   border-width: 3px;
-  bottom: 485px;
-  right: 140px;
   box-shadow: 0 0 20px 5px;
   border-radius: 10px;
 }
@@ -146,12 +162,16 @@ footer h3 {
 
 #edamam-response {
   border: solid 2px red;
+  border-radius: 5px;
+  margin: 5px;
 }
 
 #edamam {
   border: solid 2px white;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(212, 186, 186, 0.8);
   height: 50px;
+  border-radius: 5px;
+  margin: 5px;
 }
 
 .thumb {
@@ -163,13 +183,17 @@ footer h3 {
 
 #documenu-response {
   border: solid 2px red;
+  border-radius: 5px;
+  margin: 5px;
 }
 
 #documenu {
   border: solid 2px white;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(194, 115, 115, 0.8);
   height: 50px;
+  border-radius: 5px;
+  margin: 5px;
 }
 
-@media screen and (min-width: 600px) {
-}
+/* @media screen and (min-width: 600px) {
+} */

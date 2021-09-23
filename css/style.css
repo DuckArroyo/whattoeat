@@ -7,7 +7,6 @@
 * {
   margin: 0;
   padding: 0;
-  /* width: 1200px; */
 }
 
 body {
@@ -15,22 +14,12 @@ body {
 }
 
 h2 {
-  background-color: var(--green);
+  background-color: rgba(0, 0, 0, 0.5);
   color: var(--white);
   text-align: left;
   padding: 40px 60px;
   margin: 0px;
   font-size: 40px;
-}
-
-.inner-box {
-  margin: 50px auto;
-  padding: 20px;
-  max-width: 700px;
-}
-
-legend {
-  padding: 20px auto;
 }
 
 /*! Buttons styles */
@@ -87,12 +76,6 @@ h2 {
   padding: 30px;
 }
 
-#option1 {
-  margin: 50px auto;
-  padding: 20px;
-  max-width: 700px;
-}
-
 head nav ul li a {
   margin: 0 30px;
   font-weight: lighter;
@@ -104,58 +87,39 @@ head nav ul li a {
   background-repeat: no-repeat;
   position: bottom;
   background-size: cover;
-
   height: auto;
   width: 100%;
 }
 
-/* .hero-form {
-  height: 500px;
-  max-width: 100%;
+legend {
+  padding: 20px auto;
 }
 
-.hero-form  {
- background-color: var(--white);
- padding: 30px;
- width: 400px;
- float: center;
- border-width: 3px;
- position: absolute;
- bottom: 485px;
- right: 140px;
-}
-
-.hero-form h3{
-  font-size: 16px;
-  margin:0;
-  
+.hero-form {
+  background-color: var(--white);
+  padding: 30px;
+  width: 550px;
+  float: center;
+  border-width: 3px;
+  bottom: 485px;
+  right: 140px;
+  box-shadow: 0 0 20px 5px;
+  border-radius: 10px;
 }
 
 .hero-form p {
   margin: 5px 0 15px 0;
 }
 
-.form-input {
-  border: 1px solid #024e76;
-  display: block;
-  padding: ;
-  font-size: 16px;
-  color: #024e76;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-
 footer {
-  background:var(--rust);
+  background: var(--rust);
   width: 100%;
   padding: 30px 25px;
-
 }
 
 footer h3 {
   font-size: 30px;
-  color:var(--white);
+  color: var(--white);
 }
 
 .locate {
@@ -174,26 +138,37 @@ footer h3 {
   border: solid;
   border-color: blue;
   text-align: center;
-} */
+}
 
 #response-container {
   border: solid 2px black;
 }
 
 #edamam-response {
-  border: solid 2px black;
+  border: solid 2px red;
 }
 
 #edamam {
-  border: solid 2px black;
+  border: solid 2px white;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 50px;
+}
+
+.thumb {
+  display: block;
+  margin: 5px auto;
+  /* width: 50px;
+  height: auto; */
 }
 
 #documenu-response {
-  border: solid 2px black;
+  border: solid 2px red;
 }
 
 #documenu {
-  border: solid 2px black;
+  border: solid 2px white;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 50px;
 }
 
 @media screen and (min-width: 600px) {

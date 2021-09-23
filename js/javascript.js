@@ -93,30 +93,6 @@ function getEdamam() {
     });
 }
 
-//getEdamam("burger", "american"); //remove when buttons are ready
-
-function buildDocumenuCard(answer) {
-  console.log(answer.data);
-  console.log(answer.data[0]);
-
-  responseContainerEl.appendChild(documenuResponseEl);
-  documenuResponseEl.appendChild(documenuEl);
-
-  for (i = 0; i <= answer.data.length; i++) {
-    //Container for each card
-    var card = document.createElement("div");
-    card.setAttribute("id", "restaurantDiv");
-    card.setAttribute("class", "documenu");
-    documenuEl.appendChild(card);
-    console.log("answer.data[i].restaurant_name");
-    console.log(answer.data[i].restaurant_name);
-    var restaurantName = answer.data[0].restaurant_name;
-    var restaurantNameEl = createElement("h4");
-    restaurantNameEl.textContent = restaurantName;
-    card.appendChild(restaurantNameEl);
-  }
-}
-
 function buildEdamamCard(data) {
   // console.log(data);
 
@@ -157,6 +133,28 @@ function buildEdamamCard(data) {
     var makesEl = document.createElement("p");
     makesEl.textContent = "Makes: " + makes + " servings.";
     card.appendChild(makesEl);
+  }
+}
+
+function buildDocumenuCard(answer) {
+  console.log(answer.data);
+  console.log(answer.data[0]);
+
+  responseContainerEl.appendChild(documenuResponseEl);
+  documenuResponseEl.appendChild(documenuEl);
+
+  for (i = 0; i <= answer.data.length; i++) {
+    //Container for each card
+    var card = document.createElement("div");
+    card.setAttribute("id", "restaurantDiv");
+    card.setAttribute("class", "documenu");
+    documenuEl.appendChild(card);
+    console.log("answer.data[i].restaurant_name");
+    console.log(answer.data[i].restaurant_name);
+    var restaurantName = answer.data[0].restaurant_name;
+    var restaurantNameEl = createElement("h4");
+    restaurantNameEl.textContent = restaurantName;
+    card.appendChild(restaurantNameEl);
   }
 }
 

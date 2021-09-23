@@ -1,54 +1,97 @@
+//Score
 var score = 10;
-
-var scoreButtonEl = document.querySelector("#submiter"); //!Need submit button id.
-var scoreEl = document.querySelector("#score");
+var scoreButtonEl = document.querySelector("#locate"); //!Check in on submit button id.
+var scoreEl = document.querySelector("#scoreSpan");
 
 scoreButtonEl.addEventListener("click", function () {
   event.preventDefault();
   if (score > 0) {
     score--;
-    scoreEl.textContent = "Score: " + score;
+    scoreEl.textContent = score;
   }
 });
 
-var apiKey = "359d18be100f928817fd7d3a21693376";
-
-var myHeaders = new Headers();
-myHeaders.append("x-api-key", "359d18be100f928817fd7d3a21693376");
-
-var requestOptions = {
-  method: "GET",
-  headers: myHeaders,
-  redirect: "follow",
-};
-
-fetch("https://api.documenu.com/v2/restaurant/4072702673999819", requestOptions)
-  .then((response) => response.text())
-  .then((result) => window.$log.trace(result))
-  .catch((error) => console.error("error", error));
-
-var getUserCategory = function (category) {
-  var apiUrl =
-    "https://api.documenu.com/v2/restaurants/zip_code/97403?size=20&page=1&exact=true&cuisine=mexican&top_cuisines=true?key=359d18be100f928817fd7d3a21693376";
-
-  // make a get request to url
+//Documenu fetch
+function getRestaurant(category, state) {
   fetch(
-    "https://api.documenu.com/v2/restaurant/4072702673999819",
-    requestOptions
+    "https://api.documenu.com/v2/restaurants/state/" +
+      state +
+      "?cuisine=" +
+      category +
+      "&key=0a3d92451c7ba73ea09adb2814dd9649"
   )
     .then(function (response) {
-      // request was successful
-      if (response.ok) {
-        console.log(response);
-        response.json().then(function (data) {
-          console.log(data);
-          displayRepos(data, user);
-        });
-      } else {
-        alert("Error: " + response.statusText);
-      }
+      return response.json();
     })
-    .catch(function (error) {
-      alert("Unable to connect to Documenu");
+    .then(function (data) {
+      buildcard(data);
     });
-};
+}
+
+function buildcard(data) {
+  console.log(data);
+  var title = data.data[0].restaurant_name;
+  var htmlTitle = $("h1").text(title);
+  $("#documenu").append(htmlTitle);
+  //! Bryan write your code here
+}
+
+getRestaurant(Restaurant, State); //remove later
+
+//Edamam fetch
+function edmamFetch (category, state){
+  fetch("https://edamam-food-and-grocery-database.p.rapidapi.com/parser"
+  +state+"?cuisine="+category+"&api_key" +
+  "d5705ed4f7msh48cd378e1f7bdcfp184776jsnd69703bb9e74")
+  .then(
+   function(response){
+     return response.json()
+   }
+ ).then(
+   function(data){
+     console.log(data)
+     buildcard(data)
+   }
+ )
+ numOfCards++;
+ var rowNum = Math.ceil(numOfCards / 3);
+
+ var newimage = $("<img>")
+          .attr("src", response.articles[0].urlToImage)
+          .addClass("imgFit");
+
+          var newDiv = $("<div>").addClass("edamam");
+          newDiv.append(newimage);
+
+          var header = $("<h2>")
+          .addClass("post-header")
+          .text(response.articles[0].title);
+
+          var summary = $("<p>").text(response.articles[0].description);
+          var categoryTitle = $("<span>")
+            .addClass("category")
+            .text(response.articles[0].source.name);
+
+            var linktosite = $("<a>")
+            .addClass("btn btn-primary siteLink")
+            .attr("href", response.articles[0].url)
+            .attr("target", "_blank")
+            .text("go to article")
+            .attr("id", response.articles[0].title);
+    
+          var newsContentDiv = $("<div>").addClass("news-content");
+          newsContentDiv
+            .append(categoryTitle)
+            .append(header)
+            .append(summary)
+            .append(linktosite);
+            
+            var cardDiv = $("<div>").addClass("cards");   
+            cardDiv.append(newDiv).append(newsContentDiv);
+
+            var responsiveDiv = $("<div>").addClass("col-sm-4");
+            responsiveDiv.append(cardDiv);
+            $(".cardRow" + rowNum).append(responsiveDiv);
+  
+var btn = document.getElementById("#locate"); //! Still good
+}

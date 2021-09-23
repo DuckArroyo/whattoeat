@@ -1,10 +1,12 @@
-√<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <!-- jquery connection -->
+
     <!-- Form style -->
     <link rel="stylesheet" 
     href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" 
@@ -19,75 +21,152 @@
     <title>Find dinner</title>
 </head>
 <body>
-    <div class="pure-g">
-        <div class="pure-u-1">
-            <h1>What do you want to eat?</h1>
-        </div>
-        <div id="gif" class="pure-u-1 inner-box">
-            <img 
-                src="./images/WhatDoYouWantant.gif" 
-                alt="WHAT DO YOU WANT TO EAT?"
-                style="border-radius: 30px; justify-content: center; ">
+   
+    <div class="pure-u-1">
+        <section class="hero">
+            <div class="pure-u-1">
+                <h2>What do you want to eat?</h2>
+                <h2>Dunno, you?</h2>
+                <h2>. . . break the cycle with What to eat!</h2>
             </div>
+        </section>
+            <div id="gif" class="pure-u-1">
+                <img 
+                    src="./images/WhatDoYouWantant.gif" 
+                    alt="WHAT DO YOU WANT TO EAT?"
+                    style="border-radius: 30px;">
+            </div>
+       
         <!--! Form please change IDs as you best see fit. for the fetch queries.-->
-        <div id="criteria"  class="pure-u-1 inner-box">
-            <form class="pure-form pure-form-stacked">
-                <fieldset>
-                    <legend>Finding dinner with a partner can be a challenge, we are here to help out. <br>
-                        Lets get dinner figured out</legend>
-                    <label for="stacked-email">Some info</label>
-                    <input type="input" id="stacked-userentry" placeholder="user input" />
-                    <span class="pure-form-message">This is a required field.</span>
-                    <label for="stacked-category">Category</label>
-                    <select id="stacked-category" class="cuisineType">
-                        <option>American</option>
-                        <option>Asian</option>
-                        <option>British</option>
-                        <option>Caribbean</option>
-                        <option>Central Europe</option>
-                        <option>French</option>
-                        <option>Indian</option>
-                        <option>Italian</option>
-                        <option>Japanese</option>
-                        <option>Kosher</option>
-                        <option>Mediterranean</option>
-                        <option>Mexican</option>
-                        <option>Middle Eastern</option>
-                        <option>Nordic</option>
-                        <option>South American</option>
-                        <option>South East Asian</option>
-                        
-                        Italian</option>
-                    </select>
-                    <button id=""  type="submit" class="pure-button pure-button-primary">Search</button>
-                </fieldset>
-            </form>
-        </div>
-        <!---------------------------------------------------------
-            Empty boxes (3) to populate with results. They are mobile responsive
-         -->
-        <div id=""  class="pure-u-1
-        pure-u-md-1-2
-        pure-u-lg-1-4
-        inner-box">
-           <p>box with style</p>
-        </div>
-        <!--------------------------------------------------------- -->
 
-        <div id=""  class="pure-u-1
-        pure-u-md-1-2
-        pure-u-lg-1-4
-        inner-box">
-            <p>box with style</p>
+        <section id="form">
+        <div id="criteria"  class="hero-form">
+            <form class="pure-form pure-form-aligned">
+                <fieldset>
+                    <legend>
+                        Finding dinner with a partner can be a challenge, we are here to help out. <br>
+                        Lets get dinner figured out.<br>
+                        But there is a catch, to avoid that never ending cycle of pain... <br>
+                        You only have 10 tries!
+                    </legend>
+                    <div class="pure-g">
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="aligned-foo">What sounds appetizing</label>
+                            <input type="text" id="aligned-foo" placeholder="Food type" />
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="aligned-foo">Cuisine Type</label>
+                            <select id="cuisineType" class="cuisineType">
+                                <option>American</option>
+                                <option>Asian</option>
+                                <option>British</option>
+                                <option>Caribbean</option>
+                                <option>Central Europe</option>
+                                <option>French</option>
+                                <option>Indian</option>
+                                <option>Italian</option>
+                                <option>Japanese</option>
+                                <option>Kosher</option>
+                                <option>Mediterranean</option>
+                                <option>Mexican</option>
+                                <option>Middle Eastern</option>
+                                <option>Nordic</option>
+                                <option>South American</option>
+                                <option>South East Asian</option>
+                            </select>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-2">
+                            <label for="stacked-state">State</label>
+                            <select id="stacked-state" class="pure-input-1-2">
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                        </div>
+                            <!-- <button id="submiter" type="submit" class="pure-button pure-button-primary">Search</button> -->
+                            <button id="locate" type="submit" class="pure-button pure-button-primary">Search</button>
+                        
+                    </div>
+              </fieldset>
+        <section>
+        
+        
+        <div id="score"  class="pure-u-1" style="justify-content: center;">
+            <h1 id="scoreH1">Score: <span id="scoreSpan">10</span></h1>
         </div>
-        <!--------------------------------------------------------- -->
-        <div id=""  class="pure-u-1
-        pure-u-md-1-2
-        pure-u-lg-1-4
-        inner-box">
-            <p>box with style</p>
+
+        </section id="response-container" class="pure-u-1">
+    
+        <div id="edamam-response">
+            <!--------------------------------------------------------- -->
+            <div id="edamam">
+            <p>edamam responses go here</p>
+            </div>
         </div>
+        <div id="documenu-response">
+            <!--------------------------------------------------------- -->
+            <div id="documenu">
+                <p>documenu responses go here</p>
+
+            </div>
+            
+        </div>
+
+    </div>
+
 </div>
+<footer>
+    <h3>Made by</h3>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./js/javascript.js"></script>
 </body>
 </html>

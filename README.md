@@ -26,7 +26,5 @@ Cienna and Rafael working on CSS and JavaScripts
 -Rafael
 Implemented score system.
 
-Scoring
-
 - Scoring is used to gamify application
 - Encourage the user to select an option. Rather than continuing the cycle of frustration.

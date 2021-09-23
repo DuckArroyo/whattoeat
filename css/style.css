@@ -1,20 +1,36 @@
+:root {
+  --green: #69896f;
+  --white: #ffffff;
+  --rust: #8b0000;
+}
 /*!Global styles */
 * {
   margin: 0;
   padding: 0;
+  /* width: 1200px; */
 }
-h1 {
-  background-color: black;
-  color: red;
-  text-align: center;
-  padding: 20px;
+
+body {
+  background-color: tomato;
+}
+
+h2 {
+  background-color: var(--green);
+  color: var(--white);
+  text-align: left;
+  padding: 40px 60px;
   margin: 0px;
+  font-size: 40px;
 }
 
 .inner-box {
   margin: 50px auto;
   padding: 20px;
   max-width: 700px;
+}
+
+legend {
+  padding: 20px auto;
 }
 
 /*! Buttons styles */
@@ -45,4 +61,140 @@ h1 {
 .button-secondary {
   background: rgb(66, 184, 221);
   /* this is a light blue */
+}
+
+h1 {
+  background-color: var(--green);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  background-color: transparent;
+  color: var(--white);
+  text-align: left;
+  padding: 15px 60px;
+  margin: 0px;
+  font-size: 40px;
+  text-shadow: 4px 4px 8px #000000;
+}
+
+#gif {
+  display: flex;
+  justify-content: center;
+  margin: 0px auto;
+  padding: 30px;
+}
+
+#option1 {
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 700px;
+}
+
+head nav ul li a {
+  margin: 0 30px;
+  font-weight: lighter;
+  font-size: 22px;
+}
+
+.hero {
+  background-image: url("https://as2.ftcdn.net/v2/jpg/01/32/61/13/1000_F_132611338_8QF2IbLH0La8zcfbFYz3qg9HHNdX8Ze7.jpg");
+  background-repeat: no-repeat;
+  position: bottom;
+  background-size: cover;
+
+  height: auto;
+  width: 100%;
+}
+
+/* .hero-form {
+  height: 500px;
+  max-width: 100%;
+}
+
+.hero-form  {
+ background-color: var(--white);
+ padding: 30px;
+ width: 400px;
+ float: center;
+ border-width: 3px;
+ position: absolute;
+ bottom: 485px;
+ right: 140px;
+}
+
+.hero-form h3{
+  font-size: 16px;
+  margin:0;
+  
+}
+
+.hero-form p {
+  margin: 5px 0 15px 0;
+}
+
+.form-input {
+  border: 1px solid #024e76;
+  display: block;
+  padding: ;
+  font-size: 16px;
+  color: #024e76;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+
+footer {
+  background:var(--rust);
+  width: 100%;
+  padding: 30px 25px;
+
+}
+
+footer h3 {
+  font-size: 30px;
+  color:var(--white);
+}
+
+.locate {
+  background-color: var(--green);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.locate:hover {
+  background-color: var(--rust);
+  color: black;
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border: solid;
+  border-color: blue;
+  text-align: center;
+} */
+
+#response-container {
+  border: solid 2px black;
+}
+
+#edamam-response {
+  border: solid 2px black;
+}
+
+#edamam {
+  border: solid 2px black;
+}
+
+#documenu-response {
+  border: solid 2px black;
+}
+
+#documenu {
+  border: solid 2px black;
+}
+
+@media screen and (min-width: 600px) {
 }

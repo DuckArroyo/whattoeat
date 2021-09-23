@@ -12,7 +12,7 @@ var user = document.querySelector("#userInput").value;
 var cuisine = document.querySelector("#cuisineType").value;
 // console.log(cuisine);
 var state = document.querySelector("#state").value;
-// console.log(state);
+//console.log(state);
 
 //container for API responses
 var responseContainerEl = document.querySelector("#response-container");
@@ -44,21 +44,21 @@ function getEdamam() {
     "https://api.edamam.com/api/recipes/v2?type=public&q=" +
       user +
       "&app_id=9d877ffc&app_key=d41009055184f2d73ec327f4ab82da3b&cuisineType=" +
-      category
-  ) //where burger is var user and cuisineType is category
+      cuisine
+  ) //where user is user input and cuisineType is cuisine
     .then(function (response) {
-      console.log(response); //Works delete when done
-      console.log(user);
-      console.log(category);
+      // console.log(response); //Works delete when done
+      // console.log(user);
+      // console.log(cuisine);
       return response.json();
     })
     .then(function (data) {
-      console.log("Edamam Success"); //Works delete when done
+      //console.log("Edamam Success"); //Works delete when done
       buildEdamamCard(data);
     });
 }
 
-//getEdamam(); //remove when buttons are ready
+getEdamam(); //remove when buttons are ready
 
 function buildDocumenuCard(answer) {
   console.log(answer.data);
@@ -86,7 +86,7 @@ function buildEdamamCard(data) {
   console.log(data);
 
   responseContainerEl.appendChild(edamamResponseEl);
-  edamamResponseEl.appendChild(EdamamEl);
+  edamamResponseEl.appendChild(edamamEl);
   console.log(data.hits);
 
   for (i = 0; i <= data.hits.length; i++) {
@@ -96,27 +96,23 @@ function buildEdamamCard(data) {
     card.setAttribute("class", "edamam");
     edamamEl.appendChild(card);
     //Image
-    // console.log("data.hits[i].recipe.image");
     // console.log(data.hits[i].recipe.image);
     //var photo = data.hits[i].recipe.image;
     // .attr("src" data.hits[i].recipe.image)
     // .addClass("thumb")
     // label
-    console.log("data.hits[i].recipe.label");
     console.log(data.hits[i].recipe.label);
     var recipeName = data.hits[i].recipe.label; //write variables for each item that need to be displayed
     var recipeNameEl = document.createElement("h4");
     recipeNameEl.textContent = recipeName;
     card.appendChild(recipeNameEl);
     //recipe source
-    console.log("data.hits[i].recipe.source");
     console.log(data.hits[i].recipe.source);
     var source = data.hits[i].recipe.source;
     var sourceEl = document.createElement("p");
     sourceEl.textContent = source;
     card.appendChild(sourceEl);
     //recipe url - create an href
-    console.log("data.hits[i].recipe.shareAs");
     console.log(data.hits[i].recipe.shareAs);
     var url = data.hits[i].recipe.shareAs;
     var urlEl = document.createElement("a");
@@ -124,7 +120,6 @@ function buildEdamamCard(data) {
     //urlEl.textContent = "Link to page";
     card.appendChild(urlEl);
     //Makes
-    console.log("data.hits[i].recipe.yield");
     console.log(data.hits[i].recipe.yield);
     var makes = data.hits[i].recipe.yield;
     var makesEl = document.createElement("p");

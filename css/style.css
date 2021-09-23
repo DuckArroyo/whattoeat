@@ -2,35 +2,32 @@
   --green: #69896f;
   --white: #ffffff;
   --rust: #8b0000;
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
 }
 /*!Global styles */
 * {
   margin: 0;
   padding: 0;
-  /* width: 1200px; */
 }
 
 body {
-  background-color: tomato;
+  --hue: var(--hue-neutral);
+  background-color: hsl(var(--hue), 100%, 20%);
+}
+
+.hide {
+  display: none;
 }
 
 h2 {
-  background-color: var(--green);
-  color: var(--white);
+  --hue: var(--hue-correct);
+  /* color: var(--white); */
   text-align: left;
   padding: 40px 60px;
   margin: 0px;
   font-size: 40px;
-}
-
-.inner-box {
-  margin: 50px auto;
-  padding: 20px;
-  max-width: 700px;
-}
-
-legend {
-  padding: 20px auto;
 }
 
 /*! Buttons styles */
@@ -55,6 +52,7 @@ legend {
 
 .button-warning {
   background: rgb(223, 117, 20);
+  margin-left: 250px;
   /* this is an orange */
 }
 
@@ -64,7 +62,7 @@ legend {
 }
 
 h1 {
-  background-color: var(--green);
+  background-color: var(--hue-wrong);
   color: white;
   text-align: center;
   padding: 20px;
@@ -87,12 +85,6 @@ h2 {
   padding: 30px;
 }
 
-#option1 {
-  margin: 50px auto;
-  padding: 20px;
-  max-width: 700px;
-}
-
 head nav ul li a {
   margin: 0 30px;
   font-weight: lighter;
@@ -104,58 +96,50 @@ head nav ul li a {
   background-repeat: no-repeat;
   position: bottom;
   background-size: cover;
-
   height: auto;
   width: 100%;
 }
 
-/* .hero-form {
-  height: 500px;
-  max-width: 100%;
+legend {
+  padding: 20px auto;
 }
 
-.hero-form  {
- background-color: var(--white);
- padding: 30px;
- width: 400px;
- float: center;
- border-width: 3px;
- position: absolute;
- bottom: 485px;
- right: 140px;
+/*! Not being used now */
+.card {
+  border: solid 2px black;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  display: inline-block;
 }
 
-.hero-form h3{
-  font-size: 16px;
-  margin:0;
-  
+.hero-form {
+  background-color: var(--white);
+  padding: 30px;
+  margin: 30px;
+  width: 550px;
+  position: relative;
+  left: 40px;
+  border-width: 3px;
+  box-shadow: 0 0 20px 5px;
+  border-radius: 10px;
 }
 
 .hero-form p {
   margin: 5px 0 15px 0;
 }
 
-.form-input {
-  border: 1px solid #024e76;
-  display: block;
-  padding: ;
-  font-size: 16px;
-  color: #024e76;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-
 footer {
-  background:var(--rust);
+  background: var(--rust);
   width: 100%;
   padding: 30px 25px;
-
 }
 
 footer h3 {
   font-size: 30px;
-  color:var(--white);
+  color: var(--white);
 }
 
 .locate {
@@ -174,27 +158,47 @@ footer h3 {
   border: solid;
   border-color: blue;
   text-align: center;
-} */
+}
 
 #response-container {
-  border: solid 2px black;
+  --hue: var(--hue-wrong);
+  background-color: hsl(var(--hue), 100%, 20%);
+  border: solid 0.5px black;
+  border-radius: 10px;
+  margin: 30px;
+  padding: 25px;
+  max-width: 100vh;
 }
 
 #edamam-response {
-  border: solid 2px black;
+  border-radius: 5px;
+  margin: 5px;
 }
 
-#edamam {
-  border: solid 2px black;
+.edamam {
+  border: solid 2px white;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.thumb {
+  display: block;
+  margin: 5px auto;
+  width: 150px;
+  height: auto;
 }
 
 #documenu-response {
-  border: solid 2px black;
+  border-radius: 5px;
+  margin: 5px;
 }
 
-#documenu {
-  border: solid 2px black;
-}
-
-@media screen and (min-width: 600px) {
+.documenu {
+  border: solid 2px white;
+  height: 50px;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
 }

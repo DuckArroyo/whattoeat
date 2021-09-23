@@ -108,6 +108,28 @@ head nav ul li a {
   height: auto;
   width: 100%;
 }
+.hero-form {
+  border: 3px solid ;
+  border-color: var(--green);
+  color: black;
+  padding: 20px;
+  width: 500px;
+  background-color: var(--white);
+  position: absolute;
+  bottom: 240px;
+  right: 20px;
+
+
+
+}
+
+
+footer  {
+background-color: var(--green);
+font-size: 30px;
+color: var(--white);
+
+}
 
 /* .hero-form {
   height: 500px;

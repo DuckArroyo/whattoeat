@@ -146,6 +146,7 @@ function edmamFetch (category, state){
             .addClass("category")
             .text(response.articles[0].source.name);
 
+<<<<<<< Updated upstream
             var linktosite = $("<a>")
             .addClass("btn btn-primary siteLink")
             .attr("href", response.articles[0].url)
@@ -201,3 +202,10 @@ var btn = document.getElementById("#locate"); //! Still good
 var btn = document.getElementById("#locate"); //! Still good
 }
 >>>>>>> Develop
+=======
+var btn = document.getElementById("#locate"); //! Still good
+
+var category = $("#cuisinetype"()).val;
+
+var state = $("#stcked-state"()).val;
+>>>>>>> Stashed changes

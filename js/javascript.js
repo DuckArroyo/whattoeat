@@ -25,35 +25,36 @@ var documenuEl = document.querySelector("#documenu");
 
 //Documenu fetch ! Add "cuisine, state" inside getDocumenu to pass argument
 function getDocumenu() {
+  var cuisine = document.querySelector("#cuisineType").value;
   console.log(cuisine);
+  var state = document.querySelector("#state").value;
   console.log(state);
-  fetch()
-    // "https://api.documenu.com/v2/restaurants/search/fields?state=oregon&cuisine=mexican&top_cuisines=false&zip_code=97403&key=359d18be100f928817fd7d3a21693376"
-    // //!OR
-    // "https://api.documenu.com/v2/restaurants/search/fields?state="
-    // + state +
-    // "&cuisine="
-    // + cuisine +
-    // "&top_cuisines=false&key=359d18be100f928817fd7d3a21693376"
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (answer) {
-      buildDocumenuCard(answer);
-    });
+  fetch();
+  "https://api.documenu.com/v2/restaurants/search/fields?state=" +
+    state +
+    "&cuisine=" +
+    cuisine +
+    "&top_cuisines=false&key=359d18be100f928817fd7d3a21693376"
+      .then(function (response) {
+        console.log(fetch);
+        return response.json();
+      })
+      .then(function (answer) {
+        buildDocumenuCard(answer);
+      });
 }
 
 //getDocumenu(); //remove when buttons are ready
 
 //Foodish fetch
 function getFoodish() {
-  console.log("called");
+  //console.log("called getFoodish");
   fetch("https://foodish-api.herokuapp.com/api/")
     .then(function (response) {
       return response.json();
     })
     .then(function (random) {
-      console.log(random);
+      //console.log(random);
       responseContainerEl.appendChild(documenuResponseEl);
       documenuResponseEl.appendChild(documenuEl);
       var card = document.createElement("div");
@@ -67,8 +68,11 @@ function getFoodish() {
 }
 
 //Edamam fetch
-function getEdamam(user, cuisine) {
+function getEdamam() {
+  //console.log("called Edamam");
+  var user = document.querySelector("#userInput").value;
   console.log(user);
+  var cuisine = document.querySelector("#cuisineType").value;
   console.log(cuisine);
   fetch(
     "https://api.edamam.com/api/recipes/v2?type=public&q=" +
@@ -77,13 +81,12 @@ function getEdamam(user, cuisine) {
       cuisine
   ) //where user is user input and cuisineType is cuisine
     .then(function (response) {
-      // console.log(response); //Works delete when done
       // console.log(user);
       // console.log(cuisine);
       return response.json();
     })
     .then(function (data) {
-      //console.log("Edamam Success"); //Works delete when done
+      console.log("Edamam Success"); //Works delete when done
       buildEdamamCard(data);
     });
 }
@@ -130,11 +133,6 @@ function buildEdamamCard(data) {
     img.src = data.hits[i].recipe.image;
     img.setAttribute("class", "card");
     card.appendChild(img);
-    // console.log(data.hits[i].recipe.image);
-    //var photo = ;
-    // .attr("src" data.hits[i].recipe.image)
-    // .addClass("thumb")
-    // label
     var recipeName = data.hits[i].recipe.label; //write variables for each item that need to be displayed
     var recipeNameEl = document.createElement("h4");
     recipeNameEl.textContent = recipeName;
@@ -173,11 +171,11 @@ function reset() {
 scoreButtonEl.addEventListener("click", function () {
   event.preventDefault();
   getFoodish();
-  getEdamam("tacos", "mexican");
+  getEdamam();
   console.log("Search button pressed");
   if (score > 0) {
     score--;
     scoreEl.textContent = score;
   }
 });
-//console.log("Bottom of JavaScript");
+console.log("Bottom of JavaScript");

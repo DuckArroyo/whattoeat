@@ -7,11 +7,13 @@ var scoreEl = document.querySelector("#scoreSpan");
 var getDocumenuEl = document.getElementById("#locate");
 var getEdamamEl = document.getElementById("#locate");
 
-var user = document.querySelector("#userInput", value);
-//var cuisine = document.querySelector("#cuisineType");
-//var category = cuisine.options[cuisine.selectedIndex].value;
-//var location = document.querySelector("#state");
-//var state = location.options[location.selectedIndex].value;
+var user = document.querySelector("#userInput").value;
+// console.log(user);
+var cuisine = document.querySelector("#cuisineType").value;
+// console.log(cuisine);
+var state = document.querySelector("#state").value;
+// console.log(state);
+
 //container for API responses
 var responseContainerEl = document.querySelector("#response-container");
 //containers to reset html
@@ -21,9 +23,6 @@ var documenuResponseEl = document.querySelector("#documenu-response");
 var edamamEl = document.querySelector("#edamam");
 var documenuEl = document.querySelector("#documenu");
 
-console.log(user);
-console.log(category);
-console.log(state);
 //Documenu fetch
 function getDocumenu() {
   fetch(

@@ -46,27 +46,6 @@ function getDocumenu() {
 
 //getDocumenu(); //remove when buttons are ready
 
-//Foodish fetch
-function getFoodish() {
-  //console.log("called getFoodish");
-  fetch("https://foodish-api.herokuapp.com/api/")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (random) {
-      //console.log(random);
-      responseContainerEl.appendChild(documenuResponseEl);
-      documenuResponseEl.appendChild(documenuEl);
-      var card = document.createElement("div");
-      card.setAttribute("id", "imageDiv");
-      card.setAttribute("class", "card");
-      documenuEl.appendChild(card);
-      img = document.createElement("img");
-      img.src = random.image;
-      card.appendChild(img);
-    });
-}
-
 //Edamam fetch
 function getEdamam() {
   //console.log("called Edamam");
@@ -134,6 +113,28 @@ function buildEdamamCard(data) {
     makesEl.textContent = "Makes: " + makes + " servings.";
     card.appendChild(makesEl);
   }
+}
+
+//Foodish fetch
+function getFoodish() {
+  //console.log("called getFoodish");
+  fetch("https://foodish-api.herokuapp.com/api/")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (random) {
+      //console.log(random);
+      responseContainerEl.appendChild(documenuResponseEl);
+      documenuResponseEl.appendChild(documenuEl);
+      var card = document.createElement("div");
+      card.setAttribute("id", "imageDiv");
+      card.setAttribute("class", "card");
+      documenuEl.appendChild(card);
+      img = document.createElement("img");
+      img.setAttribute("class", "card");
+      img.src = random.image;
+      card.appendChild(img);
+    });
 }
 
 function buildDocumenuCard(answer) {

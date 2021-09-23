@@ -7,16 +7,18 @@
 * {
   margin: 0;
   padding: 0;
+  /* width: 1200px; */
 }
 
+body {
+  background-color: tomato;
+}
 
-.pure-u-1 h2  {
-
+h2 {
   background-color: var(--green);
   color: var(--white);
   text-align: left;
   padding: 40px 60px;
-
   margin: 0px;
   font-size: 40px;
 }
@@ -61,6 +63,30 @@ legend {
   /* this is a light blue */
 }
 
+h1 {
+  background-color: var(--green);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  background-color: transparent;
+  color: var(--white);
+  text-align: left;
+  padding: 15px 60px;
+  margin: 0px;
+  font-size: 40px;
+  text-shadow: 4px 4px 8px #000000;
+}
+
+#gif {
+  display: flex;
+  justify-content: center;
+  margin: 0px auto;
+  padding: 30px;
+}
+
 #option1 {
   margin: 50px auto;
   padding: 20px;
@@ -78,12 +104,18 @@ head nav ul li a {
   background-repeat: no-repeat;
   position: bottom;
   background-size: cover;
+
+  height: auto;
+  width: 100%;
+}
+
+/* .hero-form {
   height: 500px;
   max-width: 100%;
 }
 
 .hero-form  {
-  background-color: var(--white);
+ background-color: var(--white);
  padding: 30px;
  width: 400px;
  float: center;
@@ -135,8 +167,34 @@ footer h3 {
 .locate:hover {
   background-color: var(--rust);
   color: black;
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border: solid;
+  border-color: blue;
+  text-align: center;
+} */
+
+#response-container {
+  border: solid 2px black;
 }
 
+#edamam-response {
+  border: solid 2px black;
+}
+
+#edamam {
+  border: solid 2px black;
+}
+
+#documenu-response {
+  border: solid 2px black;
+}
+
+#documenu {
+  border: solid 2px black;
+}
 
 @media screen and (min-width: 600px) {
 }

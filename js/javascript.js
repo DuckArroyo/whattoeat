@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function myFunction() {
   var stackeduserentry = document.querySelector("#stacked-userentry").value;
 
@@ -69,39 +70,77 @@ function secondfunction () {
 //myFunction();
 //})
 
+=======
+//Score
+>>>>>>> Develop
 var score = 10;
-
-var scoreButtonEl = document.querySelector("#submiter"); //!Check in on submit button id.
-var scoreEl = document.querySelector("#score");
+var scoreButtonEl = document.querySelector("#locate"); //!Check in on submit button id.
+var scoreEl = document.querySelector("#scoreSpan");
 
 scoreButtonEl.addEventListener("click", function () {
   event.preventDefault();
   if (score > 0) {
     score--;
-    scoreEl.textContent = "Score: " + score;
+    scoreEl.textContent = score;
   }
 });
 
-// var apiKey = "359d18be100f928817fd7d3a21693376";
+//Documenu fetch
+function getRestaurant(category, state) {
+  fetch(
+    "https://api.documenu.com/v2/restaurants/state/" +
+      state +
+      "?cuisine=" +
+      category +
+      "&key=0a3d92451c7ba73ea09adb2814dd9649"
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      buildcard(data);
+    });
+}
 
-// var myHeaders = new Headers();
-// myHeaders.append("x-api-key", "359d18be100f928817fd7d3a21693376");
+function buildcard(data) {
+  console.log(data);
+  var title = data.data[0].restaurant_name;
+  var htmlTitle = $("h1").text(title);
+  $("#documenu").append(htmlTitle);
+  //! Bryan write your code here
+}
 
-// var requestOptions = {
-//   method: "GET",
-//   headers: myHeaders,
-//   redirect: "follow",
-// };
+getRestaurant(Restaurant, State); //remove later
 
-// fetch("https://api.documenu.com/v2/restaurant/4072702673999819", requestOptions)
-//   .then((response) => response.text())
-//   .then((result) => window.$log.trace(result))
-//   .catch((error) => console.error("error", error));
+//Edamam fetch
+function getEdamam() {
+  var stackeduserentry = document.querySelector("#stacked-userentry").value;
 
-// var getUserCategory = function (category) {
-//   var apiUrl =
-//     "https://api.documenu.com/v2/restaurants/zip_code/97403?size=20&page=1&exact=true&cuisine=mexican&top_cuisines=true?key=359d18be100f928817fd7d3a21693376";
+  fetch(
+    "https://edamam-food-and-grocery-database.p.rapidapi.com/parser?q=" +
+      stackeduserentry +
+      "&api_key" +
+      "d5705ed4f7msh48cd378e1f7bdcfp184776jsnd69703bb9e74"
+  )
+    .then((response) => response.json())
+    .then(data);
+  console.log(data);
+}
+      .then(function (response) {
+      console.log(response.data[0]);
 
+        .catch(err => {console.error(err);})
+
+        var containerEl = document.querySelector("#box"); //! edamam or edamam response in html
+
+        containerEl.innerHTML = null;
+        var imgEl = document.createElement("img");
+        imgEl.setAttribute("src");
+        containerEl.appendChild(imgEl);
+      });
+      }
+
+<<<<<<< HEAD
 //   // make a get request to url
 //   fetch(
 //     "https://api.documenu.com/v2/restaurant/4072702673999819",
@@ -127,3 +166,6 @@ scoreButtonEl.addEventListener("click", function () {
 var categoregy = $("#cuisinetype") .val;
 
  
+=======
+var btn = document.getElementById("#locate"); //! Still good
+>>>>>>> Develop

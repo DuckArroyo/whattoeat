@@ -1,19 +1,29 @@
 //Score
 var score = 10;
 var scoreButtonEl = document.querySelector("#locate");
-var getDocumenuEl = document.querySelector("#locate");
-var getEdamamEl = document.querySelector("#locate");
-
 var scoreEl = document.querySelector("#scoreSpan");
-var user = document.querySelector("#aligned-foo");
-var category = document.querySelector("#cuisineType");
-var state = document.querySelector("#state");
+
+//buttons
+var getDocumenuEl = document.getElementById("#locate");
+var getEdamamEl = document.getElementById("#locate");
+
+var user = document.querySelector("#userInput", value);
+//var cuisine = document.querySelector("#cuisineType");
+//var category = cuisine.options[cuisine.selectedIndex].value;
+//var location = document.querySelector("#state");
+//var state = location.options[location.selectedIndex].value;
+//container for API responses
 var responseContainerEl = document.querySelector("#response-container");
+//containers to reset html
 var edamamResponseEl = document.querySelector("#edamam-response");
 var documenuResponseEl = document.querySelector("#documenu-response");
+//smallest containers
 var edamamEl = document.querySelector("#edamam");
 var documenuEl = document.querySelector("#documenu");
 
+console.log(user);
+console.log(category);
+console.log(state);
 //Documenu fetch
 function getDocumenu() {
   fetch(
@@ -27,7 +37,7 @@ function getDocumenu() {
     });
 }
 
-getDocumenu();
+//getDocumenu(); //remove when buttons are ready
 
 //Edamam fetch
 function getEdamam() {
@@ -38,7 +48,9 @@ function getEdamam() {
       category
   ) //where burger is var user and cuisineType is category
     .then(function (response) {
-      //console.log(response); Works delete when done
+      console.log(response); //Works delete when done
+      console.log(user);
+      console.log(category);
       return response.json();
     })
     .then(function (data) {
@@ -60,14 +72,14 @@ function buildDocumenuCard(answer) {
     //Container for each card
     var card = document.createElement("div");
     card.setAttribute("id", "restaurantDiv");
-    card.setAttribute("class", "card");
+    card.setAttribute("class", "documenu");
     documenuEl.appendChild(card);
     console.log("answer.data[i].restaurant_name");
     console.log(answer.data[i].restaurant_name);
     var restaurantName = answer.data[0].restaurant_name;
     var restaurantNameEl = createElement("h4");
     restaurantNameEl.textContent = restaurantName;
-    card.appendChild();
+    card.appendChild(restaurantNameEl);
   }
 }
 
@@ -78,12 +90,11 @@ function buildEdamamCard(data) {
   edamamResponseEl.appendChild(EdamamEl);
   console.log(data.hits);
 
-  //!This loop works. We will use it to loop through the responses
   for (i = 0; i <= data.hits.length; i++) {
     //Container for each card
     var card = document.createElement("div");
     card.setAttribute("id", "recipeDiv");
-    card.setAttribute("class", "card");
+    card.setAttribute("class", "edamam");
     edamamEl.appendChild(card);
     //Image
     // console.log("data.hits[i].recipe.image");
@@ -129,8 +140,6 @@ function reset() {
   documenuResponseEl.innerHTML = "";
 }
 
-var search = document.getElementById("#locate"); //! Still good
-
 //getEdamamEl.addEventListener("click", getEdamam);
 //getDocumenuEl.addEventListener("click", getDocumenu);
 scoreButtonEl.addEventListener("click", function () {
@@ -141,4 +150,4 @@ scoreButtonEl.addEventListener("click", function () {
     scoreEl.textContent = score;
   }
 });
-console.log("Bottom of JavaScript");
+//console.log("Bottom of JavaScript");

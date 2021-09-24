@@ -79,7 +79,7 @@ function buildEdamamCard(data) {
   card.setAttribute("id", "recipeDiv");
   card.setAttribute("class", "card");
   edamamResponseEl.appendChild(card);
-  //Image
+  //!Image
   console.log("data.hits[0].recipe.image");
   console.log(data.hits[0].recipe.image);
 
@@ -100,7 +100,7 @@ function buildEdamamCard(data) {
   var sourceEl = document.createElement("p");
   sourceEl.textContent = source;
   card.appendChild(sourceEl);
-  //recipe url - create an href
+  //!recipe url - create an href
   console.log("data.hits[0].recipe.shareAs");
   console.log(data.hits[0].recipe.shareAs);
   var url = data.hits[0].recipe.shareAs;

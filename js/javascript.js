@@ -67,7 +67,7 @@ function getEdamam() {
       return response.json();
     })
     .then(function (data) {
-      console.log("Edamam Success"); //Works delete when done
+      //console.log("Edamam Success"); //Works delete when done
       buildEdamamCard(data);
     });
 }
@@ -106,7 +106,7 @@ function buildEdamamCard(data) {
     urlEl.setAttribute("href", url + '"' + ' target="_blank">');
     //console.log(urlEl);
     urlEl.textContent = "Link to the recipe";
-    console.log(urlEl);
+    //console.log(urlEl);
     card.appendChild(urlEl);
     //Makes
     var makes = data.hits[i].recipe.yield;

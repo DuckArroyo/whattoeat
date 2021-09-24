@@ -28,3 +28,8 @@ Implemented score system.
 
 - Scoring is used to gamify application
 - Encourage the user to select an option. Rather than continuing the cycle of frustration.
+
+To dos after presentation
+
+- if statement to trim text of spaces,
+- if statement to check field is not empty

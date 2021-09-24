@@ -20,6 +20,10 @@ Researching Edamam API - provides recipe information
 https://developer.edamam.com/edamam-docs-recipe-api
 
 Bryan is researching restaurant API
+https://documenu.com/
+
+Rafael research and implememented Foodish
+https://foodish-api.herokuapp.com/
 
 Cienna and Rafael working on CSS and JavaScripts
 
@@ -33,3 +37,4 @@ To dos after presentation
 
 - if statement to trim text of spaces,
 - if statement to check field is not empty
+

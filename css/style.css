@@ -135,6 +135,7 @@ legend {
   margin: 5px;
   padding: 10px;
   display: inline-block;
+  max-width: 200px;
 }
 
 .hero-form {

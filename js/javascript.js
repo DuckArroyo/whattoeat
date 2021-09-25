@@ -55,21 +55,30 @@ function getEdamam() {
   var cuisine = document.querySelector("#cuisineType").value;
   //console.log(cuisine);
 
-  fetch(
-    "https://api.edamam.com/api/recipes/v2?type=public&q=" +
-      user +
-      "&app_id=9d877ffc&app_key=d41009055184f2d73ec327f4ab82da3b&cuisineType=" +
-      cuisine
-  ) //where user is user input and cuisineType is cuisine
-    .then(function (response) {
-      // console.log(user);
-      // console.log(cuisine);
-      return response.json();
-    })
-    .then(function (data) {
-      //console.log("Edamam Success"); //Works delete when done
-      buildEdamamCard(data);
-    });
+  //.trim text
+  //if "" > else alert
+  if () {
+
+    fetch(
+      "https://api.edamam.com/api/recipes/v2?type=public&q=" +
+        user +
+        "&app_id=9d877ffc&app_key=d41009055184f2d73ec327f4ab82da3b&cuisineType=" +
+        cuisine
+    ) //where user is user input and cuisineType is cuisine
+      .then(function (response) {
+        // console.log(user);
+        // console.log(cuisine);
+        return response.json();
+      })
+      .then(function (data) {
+        //console.log("Edamam Success"); //Works delete when done
+        buildEdamamCard(data);
+      });
+
+  }else (user === "") {
+      alert("Please tell us what sounds appetizing");
+    };
+
 }
 
 function buildEdamamCard(data) {

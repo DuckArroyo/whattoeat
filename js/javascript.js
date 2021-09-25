@@ -7,13 +7,6 @@ var scoreEl = document.querySelector("#scoreSpan");
 var getDocumenuEl = document.querySelector("#locate");
 var getEdamamEl = document.querySelector("#locate");
 
-var user = document.querySelector("#userInput").value;
-// console.log(user);
-var cuisine = document.querySelector("#cuisineType").value;
-// console.log(cuisine);
-var state = document.querySelector("#state").value;
-//console.log(state);
-
 //container for API responses
 var responseContainerEl = document.querySelector("#response-container");
 //containers to reset html
@@ -46,39 +39,41 @@ function getDocumenu() {
 
 //getDocumenu(); //remove when buttons are ready
 
+//!checkText is being called in Edamam
+function checkText(user) {
+  if (user == "") {
+    alert("Please tell us what sounds appetizing");
+  } else {
+    alert("search is good");
+  }
+}
+
+//checkText() //! Checks the text
+
 //Edamam fetch
 function getEdamam() {
-  //console.log("called Edamam");
+  console.log("called Edamam");
 
   var user = document.querySelector("#userInput").value;
   //console.log(user);
   var cuisine = document.querySelector("#cuisineType").value;
   //console.log(cuisine);
-
-  //.trim text
-  //if "" > else alert
-  if () {
-
-    fetch(
-      "https://api.edamam.com/api/recipes/v2?type=public&q=" +
-        user +
-        "&app_id=9d877ffc&app_key=d41009055184f2d73ec327f4ab82da3b&cuisineType=" +
-        cuisine
-    ) //where user is user input and cuisineType is cuisine
-      .then(function (response) {
-        // console.log(user);
-        // console.log(cuisine);
-        return response.json();
-      })
-      .then(function (data) {
-        //console.log("Edamam Success"); //Works delete when done
-        buildEdamamCard(data);
-      });
-
-  }else (user === "") {
-      alert("Please tell us what sounds appetizing");
-    };
-
+  checkText(user);
+  fetch(
+    "https://api.edamam.com/api/recipes/v2?type=public&q=" +
+      user +
+      "&app_id=9d877ffc&app_key=d41009055184f2d73ec327f4ab82da3b&cuisineType=" +
+      cuisine
+  ) //where user is user input and cuisineType is cuisine
+    .then(function (response) {
+      // console.log(user);
+      // console.log(cuisine);
+      return response.json();
+    })
+    .then(function (data) {
+      //console.log("Edamam Success"); //Works delete when done
+      buildEdamamCard(data);
+    });
 }
 
 function buildEdamamCard(data) {
@@ -176,17 +171,11 @@ function reset() {
   responseContainerEl.addClass("hide");
 }
 
-//! Having a hard time coding the buttons. Get them to pass the correct fields hardcoded but not from the button press
-// getEdamamEl.addEventListener("click", getEdamam); //!This is triggering by default
-// getDocumenuEl.addEventListener("click", getDocumenu(cuisine, state)); //!This is triggering by default
-
-//!Currently runnin edamam and foodish off score button
-
 scoreButtonEl.addEventListener("click", function () {
   event.preventDefault();
   getFoodish();
   getEdamam();
-  //console.log("Search button pressed");
+  console.log("Search button pressed");
   if (score > 0) {
     score--;
     scoreEl.textContent = score;

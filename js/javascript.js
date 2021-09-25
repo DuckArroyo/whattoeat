@@ -55,6 +55,10 @@ function getEdamam() {
   var cuisine = document.querySelector("#cuisineType").value;
   //console.log(cuisine);
 
+  if (user === "") {
+    alert("Please tell us what sounds appetizing");
+  }
+
   fetch(
     "https://api.edamam.com/api/recipes/v2?type=public&q=" +
       user +

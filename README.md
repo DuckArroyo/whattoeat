@@ -51,6 +51,24 @@ To dos after presentation
 - if statement to trim text of spaces,
 - if statement to check field is not empty
 
+# Contributions by:
+
+DeveloperDuckArroyo
+
+[Email](mailto:DeveloperDuckArroyo@gmail.com)
+
+[Portfolio](https://github.com/DuckArroyo/portfolio)
+
+[React Portfolio](http://DuckArroyo.github.io/reactPortfolio)
+
+[GitHub](https://github.com/DuckArroyo)
+
+[Twitter @DevDuckArroyo](https://twitter.com/DevDuckArroyo)
+
+[LinkedIn](https://www.linkedin.com/in/duckarroyo)
+
+[CodePen](https://codepen.io/DeveloperDuckArroyo)
+
 # Home page
 
 - The user enters the food they want and select a cuisine type.

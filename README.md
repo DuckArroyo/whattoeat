@@ -1,6 +1,6 @@
 # whattoeat
 
-https://duckarroyo.github.io/whattoeat/
+[Github Pages](https://duckarroyo.github.io/whattoeat)
 
 Group 1 project: What do you want to eat?
 
